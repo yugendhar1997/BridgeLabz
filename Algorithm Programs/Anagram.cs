@@ -1,17 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Anagram.cs" company="Bridgelabz">
+// Copyright © 2019  Company="BridgeLabz"
+// </copyright>
+// <creator name="Yugendhar Pyata"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace Algorithm_Programs
 {
-    class Anagram
-    {
+    using System;
 
+    /// <summary>
+    /// To Check Whether The Strings are Anagram or Not
+    /// </summary>
+    public class Anagram 
+    {
+        /// <summary>
+        /// Detects the anagram.
+        /// </summary>
         public void DetectAnagram()
         {
             Console.WriteLine("Enter 1st Word");
             string string1 = Console.ReadLine().ToUpper();
-
             Console.WriteLine("Enter 2nd Word");
             string string2 = Console.ReadLine().ToUpper();
 
@@ -28,7 +36,6 @@ namespace Algorithm_Programs
             {
                 Console.WriteLine("Both The Strings Are Anagram");
             }
-
             else
             {
                 Console.WriteLine("Both The Strings Are Not Anagram");

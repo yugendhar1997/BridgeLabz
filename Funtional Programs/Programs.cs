@@ -1,13 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Programs.cs" company="Bridgelabz">
+// Copyright © 2019  Company="BridgeLabz"
+// </copyright>
+// <creator name="Yugendhar Pyata"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace FunctionalPrograms
 {
-    class Programs
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// Run Total Program
+    /// </summary>
+    public class Programs
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// Defines the entry point of the application.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
+        public static void Main(string[] args)
         {
+            //// Using Do While , Created Infinite Loop
             do
             {
                 Console.WriteLine();
@@ -95,16 +109,15 @@ namespace FunctionalPrograms
                         break;
 
                     case 14:
-                        Stopwatch stopwatch = new Stopwatch();
-
+                        StopWatchTime stopWatchTime = new StopWatchTime();
+                        stopWatchTime.Watch();
                         break;
 
                     case 15:
-                        TicTacToe ticTacToe = new TicTacToe();
-
                         break;
                 }
-            } while (true);
+            } 
+            while (true);
         }
     }
 }

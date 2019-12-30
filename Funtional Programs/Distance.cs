@@ -1,11 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Distance.cs" company="Bridgelabz">
+// Copyright © 2019  Company="BridgeLabz"
+// </copyright>
+// <creator name="Yugendhar Pyata"/>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace FunctionalPrograms
 {
-    class Distance
+    using System;
+
+    /// <summary>
+    /// To Find The Euclidean distance from the point (x, y) to the origin (0, 0)
+    /// </summary>
+    public class Distance
     {
+        /// <summary>
+        /// Finds the distance.
+        /// </summary>
         public void FindDistance()
         {
             Console.WriteLine("Enter The X Value");
@@ -14,10 +25,14 @@ namespace FunctionalPrograms
             Console.WriteLine("Enter The Y value");
             int y = Convert.ToInt32(Console.ReadLine());
 
-            CalculateDistance(x, y);
-
+            this.CalculateDistance(x, y);
         }
 
+        /// <summary>
+        /// Calculates the distance.
+        /// </summary>
+        /// <param name="x">The x.</param>
+        /// <param name="y">The y.</param>
         public void CalculateDistance(int x, int y)
         {
             Console.WriteLine();

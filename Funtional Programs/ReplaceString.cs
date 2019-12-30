@@ -1,11 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ReplaceString.cs" company="Bridgelabz">
+// Copyright © 2019  Company="BridgeLabz"
+// </copyright>
+// <creator name="Yugendhar Pyata"/>
+// --------------------------------------------------------------------------------------------------------------------    
 namespace FunctionalPrograms
 {
-    class ReplaceString
+    using System;
+
+    /// <summary>
+    /// Replaces Usernames given by user
+    /// </summary>
+    public class ReplaceString
     {
+        /// <summary>
+        /// Replaces the strings.
+        /// </summary>
         public void ReplaceStrings()
         {
             Console.WriteLine("Enter The Source Term of String");

@@ -1,12 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Prime_Numbers.cs" company="Bridgelabz">
+// Copyright © 2019  Company="BridgeLabz"
+// </copyright>
+// <creator name="Yugendhar Pyata"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace Algorithm_Programs
 {
-    class Prime_Numbers
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// To Find The Prime Numbers
+    /// </summary>
+    public class Prime_Numbers
     {
-        int i, j, count;
+        ////initialie variables
+        private int i, j, count;
+
+        /// <summary>
+        /// Checks the prime.
+        /// </summary>
         public void CheckPrime()
         {
             Console.WriteLine("\nPrime Numbers b/w 0 - 1000");
@@ -17,11 +31,11 @@ namespace Algorithm_Programs
                 {
                     if (i % j == 0)
                     {
-                        count++;
+                        this.count++;
                     }
                 }
 
-                if (count == 0)
+                if (this.count == 0)
                 {
                     Console.WriteLine(i);
                 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bridgelabz\\source\\repos\\ConsoleApp1\\FunctionalPrograms.csproj": {}
+    "C:\\Users\\Bridgelabz\\source\\repos\\Funtional Programs\\FunctionalPrograms.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bridgelabz\\source\\repos\\ConsoleApp1\\FunctionalPrograms.csproj": {
+    "C:\\Users\\Bridgelabz\\source\\repos\\Funtional Programs\\FunctionalPrograms.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bridgelabz\\source\\repos\\ConsoleApp1\\FunctionalPrograms.csproj",
+        "projectUniqueName": "C:\\Users\\Bridgelabz\\source\\repos\\Funtional Programs\\FunctionalPrograms.csproj",
         "projectName": "FunctionalPrograms",
-        "projectPath": "C:\\Users\\Bridgelabz\\source\\repos\\ConsoleApp1\\FunctionalPrograms.csproj",
+        "projectPath": "C:\\Users\\Bridgelabz\\source\\repos\\Funtional Programs\\FunctionalPrograms.csproj",
         "packagesPath": "C:\\Users\\Bridgelabz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bridgelabz\\source\\repos\\ConsoleApp1\\obj\\",
+        "outputPath": "C:\\Users\\Bridgelabz\\source\\repos\\Funtional Programs\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Bridgelabz\\AppData\\Roaming\\NuGet\\NuGet.Config",

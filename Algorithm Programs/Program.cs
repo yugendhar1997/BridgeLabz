@@ -1,13 +1,27 @@
-﻿using System;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Program.cs" company="Bridgelabz">
+// Copyright © 2019  Company="BridgeLabz"
+// </copyright>
+// <creator name="Yugendhar Pyata"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace Algorithm_Programs
 {
-    class Program
+    using System;
+
+    /// <summary>
+    /// Run Total Program
+    /// </summary>
+    public class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// Defines the entry point of the application.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
+       public static void Main(string[] args)
         {
-            do
-            {
+            //// To Perform Test Cases atleast once but in this case created infinite loop
+            while (true) 
+            { 
                 Console.WriteLine();
                 Console.WriteLine("Press 1  : Vending Machine");
                 Console.WriteLine("Press 2  : Day Of Week");
@@ -25,46 +39,45 @@ namespace Algorithm_Programs
                 Console.WriteLine("Press 14 : Message Demonstration using String Function ");
 
                 int press = Convert.ToInt32(Console.ReadLine());
-
                 switch (press)
                 {
+                    case 1:
+                        VendingMachine vendingMachine = new VendingMachine();
+                        vendingMachine.CalculateNotes();
+                        break;
                     case 3:
                         TemperatureConvertion temperatureConvertion = new TemperatureConvertion();
                         temperatureConvertion.ConvertTemperature();
                         break;
-
                     case 4:
                         MonthlyPayment monthlyPayment = new MonthlyPayment();
                         monthlyPayment.CalculatePayment();
                         break;
-
                     case 5:
                         SqrtNewtonMethod sqrtNewtonMethod = new SqrtNewtonMethod();
                         sqrtNewtonMethod.FindSqrtNewtonMethod();
                         break;
-
                     case 8:
                         Insertion_Sort insertion_Sort = new Insertion_Sort();
                         insertion_Sort.PerformInsertionSort();
                         break;
-
                     case 9:
                         Bubble_Sort bubble_Sort = new Bubble_Sort();
                         bubble_Sort.Sort();
                         break;
-
                     case 11:
                         Anagram anagram = new Anagram();
                         anagram.DetectAnagram();
                         break;
-
                     case 12:
                         Prime_Numbers prime_Numbers = new Prime_Numbers();
                         prime_Numbers.CheckPrime();
                         break;
+                    default:
+                        Console.WriteLine("Invalid Choice");
+                        break;
                 }
-
-            } while (true);
+            } 
         }
     }
 }
