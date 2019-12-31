@@ -4,7 +4,6 @@
 // </copyright>
 // <creator name="Yugendhar Pyata"/>
 // --------------------------------------------------------------------------------------------------------------------
-
 namespace FunctionalPrograms
 {
     using System;
@@ -17,26 +16,9 @@ namespace FunctionalPrograms
         /// <summary>
         /// Finds the distance.
         /// </summary>
-        public void FindDistance()
+        public static void FindDistance()
         {
-            Console.WriteLine("Enter The X Value");
-            int x = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("Enter The Y value");
-            int y = Convert.ToInt32(Console.ReadLine());
-
-            this.CalculateDistance(x, y);
-        }
-
-        /// <summary>
-        /// Calculates the distance.
-        /// </summary>
-        /// <param name="x">The x.</param>
-        /// <param name="y">The y.</param>
-        public void CalculateDistance(int x, int y)
-        {
-            Console.WriteLine();
-            Console.WriteLine("Distance is " + Math.Sqrt((x * x) + (y * y)));
+            Utility.CalculateDistance();
         }
     }
 }
