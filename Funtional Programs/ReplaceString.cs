@@ -16,7 +16,7 @@ namespace FunctionalPrograms
         /// <summary>
         /// Replaces the strings.
         /// </summary>
-        public void ReplaceStrings()
+        public static void ReplaceStrings()
         {
             Console.WriteLine("Enter The Source Term of String");
             string source = Console.ReadLine();

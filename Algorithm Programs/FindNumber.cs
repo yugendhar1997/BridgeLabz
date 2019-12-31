@@ -1,28 +1,24 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="StopWatchTime.cs" company="Bridgelabz">
+// <copyright file="FindNumber.cs" company="Bridgelabz">
 // Copyright © 2019  Company="BridgeLabz"
 // </copyright>
 // <creator name="Yugendhar Pyata"/>
 // --------------------------------------------------------------------------------------------------------------------
-namespace FunctionalPrograms
+namespace Algorithm_Programs
 {
     using System;
-    using System.Diagnostics;
 
     /// <summary>
-    /// Finds Elapsed Time
+    /// This Program for Guessing the number
     /// </summary>
-    public class StopWatchTime
+    public class FindNumber
     {
         /// <summary>
-        /// Watches this instance.
+        /// Find this instance.
         /// </summary>
-        public static void Watch()
+        public static void Find()
         {
-            var sw = Stopwatch.StartNew();
-            Console.ReadKey();
-            long ticks = sw.ElapsedTicks;
-            Console.WriteLine("Elapsed Time is:" + (ticks % 1000));
+            Utility.FindYourNum();
         }
     }
 }

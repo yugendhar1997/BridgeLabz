@@ -16,40 +16,22 @@ namespace FunctionalPrograms
         /// <summary>
         /// The tail count
         /// </summary>
-        private static int tailCount;
+        public static int TailCount;
 
         /// <summary>
         /// The head count
         /// </summary>
-        private static int headCount;
+        public static int HeadCount;
 
         /// <summary>
         /// Flips the coins.
         /// </summary>
-        public void FlipCoins()
+        public static void FlipCoins()
         {
             Console.WriteLine("How many times will the coin be flipped?");
             int number = Convert.ToInt32(Console.ReadLine());
 
-            for (int i = 0; i < number; i++)
-            {
-                Random random = new Random();
-
-                if (random.NextDouble() < 0.5)
-                {
-                    headCount++;
-                }
-                else
-                {
-                    tailCount++;
-                }
-            }
-
-            double heads = (double)headCount / number * 100.0;
-            double tails = (double)tailCount / number * 100.0;
-            Console.WriteLine();
-            Console.WriteLine("Percentage Of Heads : " + heads + " %");
-            Console.WriteLine("Percentage Of Tails : " + tails + " %");
+            Utility.FlipCoinPercentage(number);
         }
     }
 }

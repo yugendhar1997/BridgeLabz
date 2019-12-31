@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -7,7 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Update="Prime Numbers.cs">
+    <Compile Update="Bubble_Sort.cs">
+      <ExcludeFromSourceAnalysis>False</ExcludeFromSourceAnalysis>
+      <ExcludeFromStyleCop>False</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Update="Prime_Numbers.cs">
       <ExcludeFromSourceAnalysis>False</ExcludeFromSourceAnalysis>
       <ExcludeFromStyleCop>False</ExcludeFromStyleCop>
     </Compile>

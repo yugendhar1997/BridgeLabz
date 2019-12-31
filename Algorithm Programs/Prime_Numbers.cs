@@ -15,31 +15,12 @@ namespace Algorithm_Programs
     /// </summary>
     public class Prime_Numbers
     {
-        ////initialie variables
-        private int i, j, count;
-
         /// <summary>
         /// Checks the prime.
         /// </summary>
-        public void CheckPrime()
+        public static void CheckPrime()
         {
-            Console.WriteLine("\nPrime Numbers b/w 0 - 1000");
-            for (i = 0; i < 1000; i++)
-            {
-                count = 0;
-                for (j = 2; j < i; j++)
-                {
-                    if (i % j == 0)
-                    {
-                        this.count++;
-                    }
-                }
-
-                if (this.count == 0)
-                {
-                    Console.WriteLine(i);
-                }
-            }
+            Utility.IsPrime();
         }
     }
 }

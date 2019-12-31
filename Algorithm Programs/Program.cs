@@ -35,44 +35,60 @@ namespace Algorithm_Programs
                 Console.WriteLine("Press 10 : Merge Sort");
                 Console.WriteLine("Press 11 : An Anagram Detection");
                 Console.WriteLine("Press 12 : Prime Numbers b/w Range");
-                Console.WriteLine("Press 13 : Question to Find your number");
-                Console.WriteLine("Press 14 : Message Demonstration using String Function ");
+                Console.WriteLine("Press 13 : Guessing The Number");
+                Console.WriteLine("Press 14 : Decimal Convertion ");
 
                 int press = Convert.ToInt32(Console.ReadLine());
                 switch (press)
                 {
                     case 1:
-                        VendingMachine vendingMachine = new VendingMachine();
-                        vendingMachine.CalculateNotes();
+                        VendingMachine.CalculateNotes();
                         break;
+
+                    case 2:
+                        DayOfWeek.Days();
+                        break;
+
                     case 3:
-                        TemperatureConvertion temperatureConvertion = new TemperatureConvertion();
-                        temperatureConvertion.ConvertTemperature();
+                        TemperatureConvertion.Conversion();
                         break;
+
                     case 4:
-                        MonthlyPayment monthlyPayment = new MonthlyPayment();
-                        monthlyPayment.CalculatePayment();
+                        MonthlyPayment.CalculatePayment();
                         break;
+
                     case 5:
-                        SqrtNewtonMethod sqrtNewtonMethod = new SqrtNewtonMethod();
-                        sqrtNewtonMethod.FindSqrtNewtonMethod();
+                        SqrtNewtonMethod.NewtonsMethod();
                         break;
+
+                    case 7:
+                        Binary_Search_The_Word.Search();
+                        break;
+
                     case 8:
-                        Insertion_Sort insertion_Sort = new Insertion_Sort();
-                        insertion_Sort.PerformInsertionSort();
+                        Insertion_Sort.Sort();
                         break;
+
                     case 9:
-                        Bubble_Sort bubble_Sort = new Bubble_Sort();
-                        bubble_Sort.Sort();
+                        Bubble_Sort.PerformBubbleSort();
                         break;
+
                     case 11:
-                        Anagram anagram = new Anagram();
-                        anagram.DetectAnagram();
+                        Anagram.DetectAnagram();
                         break;
+
                     case 12:
-                        Prime_Numbers prime_Numbers = new Prime_Numbers();
-                        prime_Numbers.CheckPrime();
+                        Prime_Numbers.CheckPrime();
                         break;
+
+                    case 13:
+                        FindNumber.Find();
+                        break;
+
+                    case 14:
+                        DecimalToBinary.DecimalConversion();
+                        break;
+
                     default:
                         Console.WriteLine("Invalid Choice");
                         break;

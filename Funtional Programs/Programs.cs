@@ -46,71 +46,58 @@ namespace FunctionalPrograms
                 switch (press)
                 {
                     case 1:
-                        ReplaceString replaceString = new ReplaceString();
-                        replaceString.ReplaceStrings();
+                        ReplaceString.ReplaceStrings();
                         break;
 
                     case 2:
-                        FlipCoin flipCoin = new FlipCoin();
-                        flipCoin.FlipCoins();
+                        FlipCoin.FlipCoins();
                         break;
 
                     case 3:
-                        LeapYear leapYear = new LeapYear();
-                        leapYear.CheckLeapyear();
+                        LeapYear.CheckLeapYear();
                         break;
 
                     case 4:
-                        PowerOf2 power = new PowerOf2();
-                        power.PowerOfTwo();
+                        PowerOf2.PowerOfTwo();
                         break;
 
                     case 5:
-                        HarmonicNumber harmonicNumber = new HarmonicNumber();
-                        harmonicNumber.FindHarmonicNumber();
+                        HarmonicNumber.FindHarmonicNumber();
                         break;
 
                     case 6:
-                        PrimeFactors primeFactors = new PrimeFactors();
-                        primeFactors.PrimeFactor();
+                        PrimeFactors.PrimeFactor();
                         break;
 
                     case 7:
                         break;
 
                     case 8:
-                        SumOf_Three_Integers sumOf_Three_Integers = new SumOf_Three_Integers();
-                        sumOf_Three_Integers.SumOfNumbers();
+                        SumOf_Three_Integers.SumOfNumbers();
                         break;
 
                     case 9:
-                        Distance distance = new Distance();
-                        distance.FindDistance();
+                        Distance.FindDistance();
                         break;
 
                     case 10:
-                        Quadratic quadratic = new Quadratic();
-                        quadratic.Quadratics();
+                        Quadratic.Quadratics();
                         break;
 
                     case 11:
-                        WindChill windChill = new WindChill();
-                        windChill.FindWindChill();
+                        WindChill.FindWindChill();
                         break;
 
                     case 12:
-                        Gambler gambler = new Gambler();
-                        gambler.Gamble();
+                        Gambler.Gamble();
                         break;
 
                     case 13:
-                        Coupon_Numbers coupon_Numbers = new Coupon_Numbers();
-                        coupon_Numbers.GenerateCoupons();
+                        Coupon_Numbers.GenerateCoupons();
                         break;
 
                     case 14:
-                        StopWatchTime stopWatchTime = new StopWatchTime();
-                        stopWatchTime.Watch();
+                        StopWatchTime.Watch();
                         break;
 
                     case 15:

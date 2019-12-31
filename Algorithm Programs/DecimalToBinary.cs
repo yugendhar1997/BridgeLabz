@@ -1,28 +1,26 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="StopWatchTime.cs" company="Bridgelabz">
+// <copyright file="DecimalToBinary.cs" company="Bridgelabz">
 // Copyright © 2019  Company="BridgeLabz"
 // </copyright>
 // <creator name="Yugendhar Pyata"/>
 // --------------------------------------------------------------------------------------------------------------------
-namespace FunctionalPrograms
+namespace Algorithm_Programs
 {
     using System;
-    using System.Diagnostics;
 
     /// <summary>
-    /// Finds Elapsed Time
+    /// This Program is Convert Decimal To Binary
     /// </summary>
-    public class StopWatchTime
+    public class DecimalToBinary
     {
         /// <summary>
-        /// Watches this instance.
+        /// Decimals the conversion.
         /// </summary>
-        public static void Watch()
+        public static void DecimalConversion()
         {
-            var sw = Stopwatch.StartNew();
-            Console.ReadKey();
-            long ticks = sw.ElapsedTicks;
-            Console.WriteLine("Elapsed Time is:" + (ticks % 1000));
+            Console.WriteLine("Enter number for conversion");
+            int num = Convert.ToInt32(Console.ReadLine());
+            Utility.Conversion(num);
         }
     }
 }

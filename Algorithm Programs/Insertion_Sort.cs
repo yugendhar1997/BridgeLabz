@@ -1,28 +1,24 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="StopWatchTime.cs" company="Bridgelabz">
+// <copyright file="Insertion_Sort.cs" company="Bridgelabz">
 // Copyright © 2019  Company="BridgeLabz"
 // </copyright>
 // <creator name="Yugendhar Pyata"/>
 // --------------------------------------------------------------------------------------------------------------------
-namespace FunctionalPrograms
+namespace Algorithm_Programs
 {
     using System;
-    using System.Diagnostics;
 
     /// <summary>
-    /// Finds Elapsed Time
+    /// Performing Insertion Sort
     /// </summary>
-    public class StopWatchTime
+    public class Insertion_Sort
     {
         /// <summary>
-        /// Watches this instance.
+        /// Performs the insertion sort.
         /// </summary>
-        public static void Watch()
+        public static void Sort()
         {
-            var sw = Stopwatch.StartNew();
-            Console.ReadKey();
-            long ticks = sw.ElapsedTicks;
-            Console.WriteLine("Elapsed Time is:" + (ticks % 1000));
+            Utility.InsertionSortingInteger();
         }
     }
 }

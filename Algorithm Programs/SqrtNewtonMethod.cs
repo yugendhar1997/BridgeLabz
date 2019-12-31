@@ -1,30 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="SqrtNewtonMethod.cs" company="Bridgelabz">
+// Copyright © 2019  Company="BridgeLabz"
+// </copyright>
+// <creator name="Yugendhar Pyata"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace Algorithm_Programs
 {
-    class SqrtNewtonMethod
+    using System;
+
+    /// <summary>
+    /// Finds The Roots Of A Quadratic Equation
+    /// </summary>
+    public class SqrtNewtonMethod
     {
-        public void FindSqrtNewtonMethod()
+        /// <summary>
+        /// Newton the method.
+        /// </summary>
+        public static void NewtonsMethod()
         {
-            Console.WriteLine("Enter C value to find Square Root By using Newtons Method");
-            double c = Convert.ToDouble(Console.ReadLine());
-
-            double epsilon = 1e-15;    // relative error tolerance
-            double t = c;              // estimate of the square root of c
-
-
-
-            // repeatedly apply Newton update step until desired precision is achieved
-            while (Math.Abs(t - c / t) > epsilon * t)
-            {
-                t = (c / t + t) / 2.0;
-            }
-
-
-            // print out the estimate of the square root of c
-            Console.WriteLine("Square Root of "+ c + " is "+t);
+            Console.WriteLine("Enter Number");
+            int num = Convert.ToInt32(Console.ReadLine());
+            double result = Utility.SquareOfT(num);
+            Console.WriteLine(result);
         }
     }
 }

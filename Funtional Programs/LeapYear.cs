@@ -11,12 +11,12 @@ namespace FunctionalPrograms
     /// <summary>
     /// Checks The Given Number Leap Year or Not
     /// </summary>
-    class LeapYear
+    public class LeapYear
     {
         /// <summary>
-        /// Checks the leapyear.
+        /// Checks the LeapYear
         /// </summary>
-        public void CheckLeapyear()
+        public static void CheckLeapYear()
         {
             Console.WriteLine("Enter a 4 digit Year to Check Leap Year or Not");
             int year = Convert.ToInt32(Console.ReadLine());
@@ -28,8 +28,9 @@ namespace FunctionalPrograms
                 Console.WriteLine("Enter a year in 4 Digits");
                 year = Convert.ToInt32(Console.ReadLine());
             }
-            // Calling the isLeap Function
-            if (isLeap(year))
+
+            // Calling the isLeap Function from Utility Class
+            if (Utility.IsLeap(year))
             {
                 Console.WriteLine();
                 Console.WriteLine(year + " is Leap Year");
@@ -38,10 +39,6 @@ namespace FunctionalPrograms
             {
                 Console.WriteLine();
                 Console.WriteLine(year + " is not Leap Year");
-            }
-            static bool isLeap(int year)
-            {
-                return ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0));
             }
         }
     }

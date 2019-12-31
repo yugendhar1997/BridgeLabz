@@ -1,28 +1,24 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="StopWatchTime.cs" company="Bridgelabz">
+// <copyright file="Binary_Search_The_Word.cs" company="Bridgelabz">
 // Copyright © 2019  Company="BridgeLabz"
 // </copyright>
 // <creator name="Yugendhar Pyata"/>
 // --------------------------------------------------------------------------------------------------------------------
-namespace FunctionalPrograms
+namespace Algorithm_Programs
 {
     using System;
-    using System.Diagnostics;
 
     /// <summary>
-    /// Finds Elapsed Time
+    /// To Perform Binary Search of Words
     /// </summary>
-    public class StopWatchTime
+    public class Binary_Search_The_Word
     {
         /// <summary>
-        /// Watches this instance.
+        /// Searches this instance.
         /// </summary>
-        public static void Watch()
+        public static void Search()
         {
-            var sw = Stopwatch.StartNew();
-            Console.ReadKey();
-            long ticks = sw.ElapsedTicks;
-            Console.WriteLine("Elapsed Time is:" + (ticks % 1000));
+            Utility.StringBinarySearch();
         }
     }
 }

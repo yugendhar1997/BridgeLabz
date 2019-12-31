@@ -16,7 +16,7 @@ namespace FunctionalPrograms
         /// <summary>
         /// Finds the wind chill.
         /// </summary>
-        public void FindWindChill()
+        public static void FindWindChill()
         {
             Console.WriteLine("Enter Temperature in Fahrenheit");
             double temperature = Convert.ToInt32(Console.ReadLine());
@@ -32,20 +32,8 @@ namespace FunctionalPrograms
             }
             else
             {
-                this.CalculateWind(temperature, speed);
+                Utility.CalculateWind(temperature, speed);
             }
-        }
-
-        /// <summary>
-        /// Calculates the wind.
-        /// </summary>
-        /// <param name="temperature">The temperature.</param>
-        /// <param name="speed">The speed.</param>
-        public void CalculateWind(double temperature, double speed)
-        {
-            double wind = (35.74 + 0.62158 * temperature + (0.4275 * temperature - 35.75) * Math.Pow(speed, 0.16));
-            Console.WriteLine();
-            Console.WriteLine("Wind Chill : " + wind);
         }
     }
 }
