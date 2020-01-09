@@ -137,13 +137,13 @@ namespace Algorithm_Programs
         }
 
         /// <summary>
-        /// Divide the array.
+        /// Mains the merge.
         /// </summary>
-        /// <param name="lower">The lower.</param>
-        /// <param name="higher">The higher.</param>
-        /// <param name="array">The array.</param>
-        /// <param name="a">The a.</param>
-        static public void MainMerge(int[] numbers, int left, int mid, int right)
+        /// <param name="numbers">The numbers.</param>
+        /// <param name="left">The left.</param>
+        /// <param name="mid">The mid.</param>
+        /// <param name="right">The right.</param>
+       public static void MainMerge(int[] numbers, int left, int mid, int right)
         {
             int[] temp = new int[25];
             int i, eol, num, pos;
@@ -158,11 +158,12 @@ namespace Algorithm_Programs
                 else
                     temp[pos++] = numbers[mid++];
             }
+
             while (left <= eol)
             {
-
                 temp[pos++] = numbers[left++];
             }
+
             while (mid <= right)
             {
                 temp[pos++] = numbers[mid++];
@@ -175,7 +176,13 @@ namespace Algorithm_Programs
             }
         }
 
-        static public void SortMerge(int[] numbers, int left, int right)
+        /// <summary>
+        /// Sorts the merge.
+        /// </summary>
+        /// <param name="numbers">The numbers.</param>
+        /// <param name="left">The left.</param>
+        /// <param name="right">The right.</param>
+        public static void SortMerge(int[] numbers, int left, int right)
         {
             int mid;
             if (right > left)
@@ -403,30 +410,6 @@ namespace Algorithm_Programs
         /// <returns>it returns integer type of value.</returns>
         public static int Conversion(int number)
         {
-            //// int[] arr = new int[8];
-            //// or (int i = 0; i < arr.Length; i++)
-            //// {
-            //// arr[i] = 0;
-            //// }
-
-            //// int k = 0;
-            //// while (number > 0)
-            //// {
-            //// arr[k] = number % 2;
-            //// number /= 2;
-            //// k++;
-            //// }
-            //// for (int i = 0; i < arr.Length; i++)
-            //// {
-            //// int temp = arr[i];
-            //// arr[i] = arr[arr.Length - i - 1];
-            //// arr[arr.Length - i - 1] = temp;
-            //// }
-            //// for (int i = 0; i < arr.Length; i++)
-            //// {
-            //// Console.WriteLine(arr[i]);
-            //// }
-
             int n = number;
             int binarynum = 0;
             int i = 1;
