@@ -7,8 +7,6 @@
 namespace Algorithm_Programs
 {
     using System;
-    using System.Collections.Generic;
-    using System.Text;
 
     /// <summary>
     /// To Find The Prime Numbers
