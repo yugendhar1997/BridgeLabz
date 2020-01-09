@@ -77,7 +77,7 @@ namespace FunctionalPrograms
             int wins = 0;
             int bets = 0;
 
-            for (int i = 1; i < noOfTimes; i++)
+            for (int i = 1; i <= noOfTimes; i++)
             {
                 int cash = stake;
 
