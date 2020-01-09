@@ -29,6 +29,7 @@ namespace Algorithm_Programs
 
             Console.WriteLine("MergeSort By Recursive Method");
             Utility.SortMerge(numbers, 0, max - 1);
+
             for (int i = 0; i < max; i++)
             {
                 Console.WriteLine(numbers[i]);
