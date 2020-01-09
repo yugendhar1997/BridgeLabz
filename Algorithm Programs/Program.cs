@@ -70,7 +70,7 @@ namespace Algorithm_Programs
                         break;
 
                     case 9:
-                        Bubble_Sort.PerformBubbleSort();
+                        Bubble_Sort.Sorting();
                         break;
 
                     case 11:
