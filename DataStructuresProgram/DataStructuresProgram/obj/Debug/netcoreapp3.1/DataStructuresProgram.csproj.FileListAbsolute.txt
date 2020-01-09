@@ -1,0 +1,11 @@
+C:\Users\Bridgelabz\Documents\Downloads\bridgelabz-master\bridgelabz-master\DataStructuresProgram\DataStructuresProgram\bin\Debug\netcoreapp3.1\DataStructuresProgram.exe
+C:\Users\Bridgelabz\Documents\Downloads\bridgelabz-master\bridgelabz-master\DataStructuresProgram\DataStructuresProgram\bin\Debug\netcoreapp3.1\DataStructuresProgram.deps.json
+C:\Users\Bridgelabz\Documents\Downloads\bridgelabz-master\bridgelabz-master\DataStructuresProgram\DataStructuresProgram\bin\Debug\netcoreapp3.1\DataStructuresProgram.runtimeconfig.json
+C:\Users\Bridgelabz\Documents\Downloads\bridgelabz-master\bridgelabz-master\DataStructuresProgram\DataStructuresProgram\bin\Debug\netcoreapp3.1\DataStructuresProgram.runtimeconfig.dev.json
+C:\Users\Bridgelabz\Documents\Downloads\bridgelabz-master\bridgelabz-master\DataStructuresProgram\DataStructuresProgram\bin\Debug\netcoreapp3.1\DataStructuresProgram.dll
+C:\Users\Bridgelabz\Documents\Downloads\bridgelabz-master\bridgelabz-master\DataStructuresProgram\DataStructuresProgram\bin\Debug\netcoreapp3.1\DataStructuresProgram.pdb
+C:\Users\Bridgelabz\Documents\Downloads\bridgelabz-master\bridgelabz-master\DataStructuresProgram\DataStructuresProgram\obj\Debug\netcoreapp3.1\DataStructuresProgram.csprojAssemblyReference.cache
+C:\Users\Bridgelabz\Documents\Downloads\bridgelabz-master\bridgelabz-master\DataStructuresProgram\DataStructuresProgram\obj\Debug\netcoreapp3.1\DataStructuresProgram.AssemblyInfoInputs.cache
+C:\Users\Bridgelabz\Documents\Downloads\bridgelabz-master\bridgelabz-master\DataStructuresProgram\DataStructuresProgram\obj\Debug\netcoreapp3.1\DataStructuresProgram.AssemblyInfo.cs
+C:\Users\Bridgelabz\Documents\Downloads\bridgelabz-master\bridgelabz-master\DataStructuresProgram\DataStructuresProgram\obj\Debug\netcoreapp3.1\DataStructuresProgram.dll
+C:\Users\Bridgelabz\Documents\Downloads\bridgelabz-master\bridgelabz-master\DataStructuresProgram\DataStructuresProgram\obj\Debug\netcoreapp3.1\DataStructuresProgram.pdb
