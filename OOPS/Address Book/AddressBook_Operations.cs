@@ -12,7 +12,7 @@ namespace OOPS.Address_Book
     using System.Text;
 
     /// <summary>
-    /// This Class Contains All Address Book Functions Which are useful 
+    /// This Class Contains All Address Book Functions Which are Called Whenever needed
     /// </summary>
     public class AddressBook_Operations
     {
@@ -33,14 +33,14 @@ namespace OOPS.Address_Book
             Console.WriteLine("Enter Last Name :");
             person.LastName = Console.ReadLine();
 
-            Console.WriteLine("Enter Phone Number");
+            Console.WriteLine("Enter Phone Number :");
             person.PhoneNumber = Console.ReadLine();
 
-            Console.WriteLine("Enter Address 1:");
+            Console.WriteLine("Enter Address 1 :");
             string[] addresses = new string[2];
             addresses[0] = Console.ReadLine();
 
-            Console.WriteLine("Enter Address 2: (Optional)");
+            Console.WriteLine("Enter Address 2 : (Optional)");
             Console.WriteLine("Enter City , State , ZipCode etc.. ");
             addresses[1] = Console.ReadLine();
 
