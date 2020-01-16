@@ -45,7 +45,11 @@ namespace OOPS
         /// <value>
         /// The name.
         /// </value>
-        public string name { get; set; }
+        public string name 
+        { 
+            get; 
+            set; 
+        }
 
         /// <summary>
         /// Gets or sets the price.
@@ -53,7 +57,11 @@ namespace OOPS
         /// <value>
         /// The price.
         /// </value>
-        public double price { get; set; }
+        public double price 
+        { 
+            get; 
+            set; 
+        }
 
         /// <summary>
         /// Gets or sets the weight.
@@ -61,7 +69,11 @@ namespace OOPS
         /// <value>
         /// The weight.
         /// </value>
-        public double weight { get; set; }
+        public double weight 
+        { 
+            get; 
+            set; 
+        }
 
     }
 
@@ -73,7 +85,11 @@ namespace OOPS
         /// <value>
         /// The name.
         /// </value>
-        public string name { get; set; }
+        public string name 
+        { 
+            get; 
+            set; 
+        }
 
         /// <summary>
         /// Gets or sets the price.
@@ -81,7 +97,11 @@ namespace OOPS
         /// <value>
         /// The price.
         /// </value>
-        public double price { get; set; }
+        public double price 
+        { 
+            get; 
+            set; 
+        }
 
         /// <summary>
         /// Gets or sets the weight.
@@ -89,7 +109,11 @@ namespace OOPS
         /// <value>
         /// The weight.
         /// </value>
-        public double weight { get; set; }
+        public double weight 
+        { 
+            get; 
+            set; 
+        }
     }
 
     public class Pulses
@@ -100,7 +124,11 @@ namespace OOPS
         /// <value>
         /// The name.
         /// </value>
-        public int name { get; set; }
+        public int name 
+        { 
+            get; 
+            set; 
+        }
 
         /// <summary>
         /// Gets or sets the price.
@@ -108,7 +136,11 @@ namespace OOPS
         /// <value>
         /// The price.
         /// </value>
-        public double price { get; set; }
+        public double price 
+        { 
+            get; 
+            set; 
+        }
 
         /// <summary>
         /// Gets or sets the weight.
@@ -116,6 +148,10 @@ namespace OOPS
         /// <value>
         /// The weight.
         /// </value>
-        public double weight { get; set; }
+        public double weight 
+        { 
+            get; 
+            set; 
+        }
     }
 }
