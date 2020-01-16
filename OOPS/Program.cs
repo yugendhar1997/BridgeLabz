@@ -18,7 +18,7 @@ namespace OOPS
         {
             while (true)
             {
-                /*
+                
                 Console.WriteLine("\n Perform Any Operation On Inventory Management");
                 Console.WriteLine(" Press 1 : Add New Item");
                 Console.WriteLine(" Press 2 : Update Items");
@@ -42,8 +42,8 @@ namespace OOPS
                         InventoryManagement.GetInventoryDetails();
                         break;
                 }
-                */
-
+                
+                /*
                 Console.WriteLine(" Press 1 : To Add a Person to Address Book");
                 Console.WriteLine(" Press 2 : To Remove a Person From Address Book");
                 Console.WriteLine(" Press 3 : To Search a Person Using First Name in Address Book");
@@ -66,6 +66,9 @@ namespace OOPS
                         AddressBook_Operations.ListPeople();
                         break;
                 }
+                
+
+                //DeckOfCards.Cards(); */
             }
         }
     }
