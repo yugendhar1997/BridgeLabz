@@ -11,7 +11,7 @@ namespace OOPS.Address_Book
     using System.Text;
 
     /// <summary>
-    /// Person Class is Like Model Class
+    /// Person Class Contains Accessors
     /// </summary>
     public class Person
     {
@@ -21,10 +21,10 @@ namespace OOPS.Address_Book
         /// <value>
         /// The first name.
         /// </value>
-        public string FirstName 
-        { 
-            get; 
-            set; 
+        public string FirstName
+        {
+            get;
+            set;
         }
 
         /// <summary>
@@ -33,10 +33,10 @@ namespace OOPS.Address_Book
         /// <value>
         /// The last name.
         /// </value>
-        public string LastName 
-        { 
-            get; 
-            set; 
+        public string LastName
+        {
+            get;
+            set;
         }
 
         /// <summary>
@@ -45,10 +45,10 @@ namespace OOPS.Address_Book
         /// <value>
         /// The address.
         /// </value>
-        public string[] Address 
-        { 
-            get; 
-            set; 
+        public string[] Address
+        {
+            get;
+            set;
         }
 
         /// <summary>
@@ -57,10 +57,10 @@ namespace OOPS.Address_Book
         /// <value>
         /// The phone number.
         /// </value>
-        public string PhoneNumber 
-        { 
-            get; 
-            set; 
+        public string PhoneNumber
+        {
+            get;
+            set;
         }
     }
 }
