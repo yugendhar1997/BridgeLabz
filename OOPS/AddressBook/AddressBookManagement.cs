@@ -65,10 +65,10 @@ namespace OOPS.AddressBook
             Console.WriteLine("Enter city : ");
             var city = Console.ReadLine();
             Console.WriteLine("Enter Phone Number : ");
-            var phoneNo = Console.ReadLine();
+            var phoneNumber = Console.ReadLine();
             Console.WriteLine("Enter ZipCode : ");
             var zipCode = Console.ReadLine();
-            var newItem = "{ 'firstName': '" + firstName + "','lastName':'" + lastName + "','address':'" + address + "','state':'" + state + "','city':'" + city + "','phoneNo':" + phoneNo + ",'zipCode':" + zipCode + "}";
+            var newItem = "{ 'firstName': '" + firstName + "','lastName':'" + lastName + "','address':'" + address + "','state':'" + state + "','city':'" + city + "','phoneNo':" + phoneNumber + ",'zipCode':" + zipCode + "}";
             var json = File.ReadAllText(this.jsonFile);
             var jsonObj = JObject.Parse(json);
             var itemArrary = jsonObj.GetValue("AddressBook") as JArray;
@@ -112,7 +112,7 @@ namespace OOPS.AddressBook
                 var newItem = "{ 'firstName': '" + newFirstName + "','lastName':'" + newLastName + "','address':'" + newAddress + "','state':'" + newState + "','city':'" + newCity + "','phoneNo':'" + newPhoneNo + "','zipCode':'" + newZipCode + "'}";
                 var itemArrary = jsonObject.GetValue("newItem") as JArray;
 
-                foreach (var item in addressArrary.Where(obj => obj["firstName"].Value<string>().Equals(itemName)).ToList()) 
+                foreach (var item in addressArrary.Where(obj => obj["firstName"].Value<string>().Equals(itemName)).ToList())
                 {
                     item["firstName"] = !string.IsNullOrEmpty(newFirstName) ? newFirstName : string.Empty;
                     item["lastName"] = !string.IsNullOrEmpty(newLastName) ? newLastName : string.Empty;
