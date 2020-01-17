@@ -1,0 +1,22 @@
+{
+  "AddressBook": [
+    {
+      "firstName": "Yugendhar",
+      "lastName": "Pyata",
+      "address": "Hyderabad",
+      "state": "Telangana",
+      "city": "Siddipet",
+      "phoneNo": 83744,
+      "zipCode": 5054
+    },
+    {
+      "firstName": "Praveen",
+      "lastName": "Nishani",
+      "address": "Hyd",
+      "state": "TS",
+      "city": "Siddipet",
+      "phoneNo": 98765,
+      "zipCode": 12345
+    }
+  ]
+}
