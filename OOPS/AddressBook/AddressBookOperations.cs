@@ -12,7 +12,7 @@ namespace OOPS.AddressBook
     using Newtonsoft.Json;
 
     /// <summary>
-    /// Performs All Operations on AddressBook
+    /// Operations to the Address Book
     /// </summary>
     public class AddressBookOperations
     {
