@@ -8,7 +8,6 @@ namespace OOPS.AddressBook
 {
     using System;
     using System.Collections.Generic;
-    using System.Text;
 
     /// <summary>
     /// Contains AddressBook Details
