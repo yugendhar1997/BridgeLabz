@@ -36,9 +36,9 @@ namespace OOPS
         /// </summary>
         public static void InventoryManagementReport()
         {
-            double totalRicePrice = 0;
-            double totalWheatsPrice = 0;
-            double totalPulsesPrice = 0;
+            double totalRicePrice = 0.0;
+            double totalWheatsPrice = 0.0;
+            double totalPulsesPrice = 0.0;
 
             string path = @"C:\Users\Bridgelabz\source\repos\OOPS\InventoryManagement\Inventory.json";
             StreamReader streamReader = new StreamReader(path);
