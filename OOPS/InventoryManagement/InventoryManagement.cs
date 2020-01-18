@@ -91,12 +91,12 @@ namespace OOPS.InventoryManagement
             var json = File.ReadAllText(this.jsonFile);
             var jsonObj = JObject.Parse(json);
 
-            var itemArrary = jsonObj.GetValue("Rice") as JArray;
+            var itemArrary = jsonObj.GetValue(itemName) as JArray;
             var newItemObj = JObject.Parse(newItem);
             Console.WriteLine("newitem " + newItemObj);
             itemArrary.Add(newItemObj);
             Console.WriteLine("Name " + itemArrary);
-            jsonObj["Rice"] = itemArrary;
+            jsonObj[itemName] = itemArrary;
 
             string newJsonResult = JsonConvert.SerializeObject(jsonObj, Formatting.Indented);
             File.WriteAllText(this.jsonFile, newJsonResult);
@@ -127,10 +127,11 @@ namespace OOPS.InventoryManagement
                 jsonObject["name"] = riceArrary;
                 string output = JsonConvert.SerializeObject(jsonObject, Formatting.Indented);
                 File.WriteAllText(this.jsonFile, output);
+                Console.WriteLine(newItemName + " is Updated on " + itemName);
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                Console.WriteLine("Update Error : " + ex.Message.ToString());
+                Console.WriteLine("Update Error : " + exception.Message.ToString());
             }
         }
 
@@ -148,9 +149,9 @@ namespace OOPS.InventoryManagement
 
                 JArray itemsArrary = (JArray)jsonObjectConvert[itemNameToDelete];
                 Console.Write("Enter Name to Delete Item : ");
-                var itemName = Console.ReadLine();
+                string itemName = Console.ReadLine();
 
-                var itemToDeleted = itemsArrary.FirstOrDefault(obj => obj["Rice"].Value<string>().Equals(itemName));
+                var itemToDeleted = itemsArrary.FirstOrDefault(obj => obj["name"].Value<string>().Equals(itemName));
                 itemsArrary.Remove(itemToDeleted);
 
                 string output = JsonConvert.SerializeObject(jsonObjectConvert, Formatting.Indented);
