@@ -2,27 +2,27 @@
   "Rice": [
     {
       "name": "Basmati",
-      "weight": 3,
-      "price": 40
+      "weight": 10,
+      "price": 700
     },
     {
       "name": "Arborio rice",
-      "price": "37",
-      "weight": "3"
+      "price": 90,
+      "weight": 20
     }
   ],
   "Pulses": [
     {
-      "name": "Green Gram",
-      "weight": 5,
-      "price": 56
+      "name": "Black Gram",
+      "price": 123,
+      "weight": 12
     }
   ],
   "Wheats": [
     {
       "name": "Emmer",
-      "weight": 3,
-      "price": 4
+      "weight": 20,
+      "price": 150
     }
   ]
 }
