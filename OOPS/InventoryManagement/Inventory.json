@@ -1,26 +1,26 @@
 {
   "Rice": [
     {
-      "name": "Basamati",
+      "name": "Basmati",
       "weight": 3,
       "price": 40
     },
     {
-      "name": "udgf",
+      "name": "Arborio rice",
       "price": "37",
       "weight": "3"
     }
   ],
   "Pulses": [
     {
-      "name": "mung",
+      "name": "Green Gram",
       "weight": 5,
       "price": 56
     }
   ],
   "Wheats": [
     {
-      "name": "xyz",
+      "name": "Emmer",
       "weight": 3,
       "price": 4
     }
