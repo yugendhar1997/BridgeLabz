@@ -4,14 +4,18 @@
 // </copyright>
 // <creator name="Yugendhar Pyata"/>
 // --------------------------------------------------------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace OOPS.InventoryManagement
 {
+    using System;
+
+    /// <summary>
+    /// Operations of Inventory
+    /// </summary>
     public class InventoryOperation
     {
+        /// <summary>
+        /// Inventories the manage.
+        /// </summary>
         public void InventoryManage()
         {
             try
@@ -19,20 +23,19 @@ namespace OOPS.InventoryManagement
                 bool flag = true;
                 while (flag)
                 {
-                    Console.WriteLine("1 : Get Details \n 2 : Add Details\n");
-
                     InventoryManagement inventoryManagement = new InventoryManagement();
+                    Console.WriteLine(" Press 1 : To Get Details");
+                    Console.WriteLine(" Press 2 : To Add Details");
                     int choice = Convert.ToInt32(Console.ReadLine());
+
                     switch (choice)
                     {
-
                         case 1:
                             inventoryManagement.GetDetails();
                             break;
                         case 2:
                             inventoryManagement.AddItem();
                             break;
-
                     }
                 }
             }
