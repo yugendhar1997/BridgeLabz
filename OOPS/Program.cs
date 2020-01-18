@@ -21,7 +21,9 @@ namespace OOPS
         /// <param name="args">The arguments.</param>
         public static void Main(string[] args)
         {
-            while (true)
+            string repeat;
+
+            do
             {
                 Console.WriteLine(" Press 1 : Address Book");
                 Console.WriteLine(" Press 2 : Inventory Data");
@@ -41,7 +43,7 @@ namespace OOPS
                         inventoryOperation.InventoryManage();
                         break;
                     case 3:
-                        InventoryManagement.InventoryDataManagementOperation.DataOperation();
+                        InventoryDataManagementOperation.DataOperation();
                         break;
                     case 4:
 
@@ -50,7 +52,10 @@ namespace OOPS
                         DeckOfCards.PlayGame();
                         break;
                 }
-            }
+
+                Console.WriteLine("\nDo you Want Continue Again? Yes or No ");
+                repeat = Console.ReadLine().ToLower();
+            } while (repeat == "yes");
         }
     }
 }
