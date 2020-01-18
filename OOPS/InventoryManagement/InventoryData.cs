@@ -10,22 +10,25 @@ namespace OOPS
     using System.Collections.Generic;
     using System.Text;
 
+    /// <summary>
+    /// Contains InventoryData
+    /// </summary>
     public class InventoryData
     {
         /// <summary>
         /// it create list of Rice class to stored multiple object.
         /// </summary>
-        public IList<Rice> rice { get; set; }
+        public IList<Rice> Rice { get; set; }
 
         /// <summary>
         /// it create list of Wheats class to stored multiple object.
         /// </summary>
-        public IList<Wheats> wheats { get; set; }
+        public IList<Wheats> Wheats { get; set; }
 
         /// <summary>
         /// it create list of Pulses class to stored multiple object.
         /// </summary>
-        public IList<Pulses> pulses { get; set; }
+        public IList<Pulses> Pulses { get; set; }
     }
 
     /// <summary>
@@ -36,17 +39,17 @@ namespace OOPS
         /// <summary>
         /// this variable set the rice name 
         /// </summary>
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// this variable take the price of rice
         /// </summary>
-        public double price { get; set; }
+        public double Price { get; set; }
 
         /// <summary>
         /// this variable take weight of rice.
         /// </summary>
-        public double weight { get; set; }
+        public double Weight { get; set; }
     }
 
 
@@ -58,17 +61,17 @@ namespace OOPS
         /// <summary>
         /// this variable set the Wheats name 
         /// </summary>
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// this variable take the price of Wheats
         /// </summary>
-        public double price { get; set; }
+        public double Price { get; set; }
 
         /// <summary>
         /// this variable take weight of Wheats.
         /// </summary>
-        public double weight { get; set; }
+        public double Weight { get; set; }
     }
 
     /// <summary>
@@ -79,17 +82,17 @@ namespace OOPS
         /// <summary>
         /// this variable set the Pulses name 
         /// </summary>
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// this variable take the price of Pulses
         /// </summary>
-        public double price { get; set; }
+        public double Price { get; set; }
 
         /// <summary>
         /// this variable take weight of Pulses.
         /// </summary>
-        public double weight { get; set; }
+        public double Weight { get; set; }
     }
 
 }
