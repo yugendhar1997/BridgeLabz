@@ -39,9 +39,9 @@ namespace OOPS.InventoryManagement
                     }
                 }
             }
-            catch (Exception e)
+            catch (Exception exception)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine(exception.Message);
             }
         }
     }
