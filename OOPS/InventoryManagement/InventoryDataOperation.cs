@@ -1,29 +1,34 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="InventoryManagement.cs" company="Bridgelabz">
+// <copyright file="InventoryDataManagementOperation.cs" company="Bridgelabz">
 // Copyright © 2019  Company="BridgeLabz"
 // </copyright>
 // <creator name="Yugendhar Pyata"/>
 // --------------------------------------------------------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace OOPS.InventoryManagement
 {
+    using System;
+
+    /// <summary>
+    /// Operations Of Inventory Management
+    /// </summary>
     public class InventoryDataManagementOperation
     {
-        private static object invetoryManagement;
-
+        /// <summary>
+        /// Data operations.
+        /// </summary>
         public static void DataOperation()
         {
-            char again;
+            string repeat;
+
             do
             {
                 InventoryManagement invetoryManagement = new InventoryManagement();
-                Console.WriteLine("*********************************** ");
-                Console.WriteLine("\n 1 : Inventory Update File \n 2 : Delete File \n 3 : Inventory reports \n ");
-                Console.WriteLine("Enter Your Choice To Run Operation ");
+                Console.WriteLine("Perform An Opearation on Inventory Data Management");
+                Console.WriteLine("Press 1 : Inventory Update File");
+                Console.WriteLine("Press 2 : Delete File");
+                Console.WriteLine("Press 3 : Inventory Reports");
                 int choice = Convert.ToInt32(Console.ReadLine());
+
                 switch (choice)
                 {
                     case 1:
@@ -35,15 +40,12 @@ namespace OOPS.InventoryManagement
                     case 3:
                         Utility.InventoryManagementReport();
                         break;
-
                 }
 
-                Console.WriteLine("\nDo You want To Continue the Press 'Y' Or 'N' ");
-                again = Console.ReadLine()[0];
+                Console.WriteLine("\nDo You want To Continue the Press 'Yes' Or 'No' ");
+                repeat = Console.ReadLine().ToLower();
             }
-            while (again == 'Y' || again == 'y');
-            Console.ReadLine();
+            while (repeat == "yes");
         }
     }
-
 }
