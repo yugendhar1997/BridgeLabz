@@ -4,64 +4,72 @@
 // </copyright>
 // <creator name="Yugendhar Pyata"/>
 // --------------------------------------------------------------------------------------------------------------------
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-
 namespace OOPS.InventoryManagement
 {
+    using System;
+    using System.IO;
+    using System.Linq;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
+
+    /// <summary>
+    /// Contains Inventory Management Operations
+    /// </summary>
     public class InventoryManagement
     {
-        string jsonFile = @"D:\bridgelabz\ObjectOrientedPrograms\ObjectOrientedPrograms\InventoryMnagement\Inventory.json";
+        /// <summary>
+        /// The JSon file
+        /// </summary>
+        private string jsonFile = @"C:\Users\Bridgelabz\source\repos\OOPS\InventoryManagement\Inventory.json";
+
+        /// <summary>
+        /// Gets the details.
+        /// </summary>
         public void GetDetails()
         {
             var json = File.ReadAllText(this.jsonFile);
             try
             {
-                var jObject = JObject.Parse(json);
-                if (jObject != null)
+                var jsonObject = JObject.Parse(json);
+                if (jsonObject != null)
                 {
-                    JArray riceArrary = (JArray)jObject["Rice"];
+                    JArray riceArrary = (JArray)jsonObject["Rice"];
                     if (riceArrary != null)
                     {
                         foreach (var item in riceArrary)
                         {
-                            Console.WriteLine(" Name \t Price\t\t Weight ");
-                            Console.WriteLine(item["name"].ToString() + "\t" + item["price"] + "\t\t" + item["weight"]);
-                            Console.WriteLine();
-                            Console.WriteLine();
+                            Console.WriteLine("Rice Name :" + item["name"].ToString());
+                            Console.WriteLine("Rice Price :" + item["price"]);
+                            Console.WriteLine("Rice Weight :" + item["weight"]);
                         }
                     }
-                    JArray wheatsArrary = (JArray)jObject["Wheats"];
+
+                    JArray wheatsArrary = (JArray)jsonObject["Wheats"];
                     if (riceArrary != null)
                     {
                         foreach (var item in wheatsArrary)
                         {
-                            Console.WriteLine("*******************************************************");
-                            Console.WriteLine("Wheats Name :" + item["name"].ToString());
+                            Console.WriteLine("\nWheats Name :" + item["name"].ToString());
                             Console.WriteLine("Wheats Price :" + item["price"]);
                             Console.WriteLine("Wheats Weight :" + item["weight"]);
                         }
                     }
-                    JArray pulsesArrary = (JArray)jObject["Pulses"];
+
+                    JArray pulsesArrary = (JArray)jsonObject["Pulses"];
                     if (riceArrary != null)
                     {
                         foreach (var item in pulsesArrary)
                         {
-                            Console.WriteLine("*******************************************************");
-                            Console.WriteLine("Pulses Name :" + item["name"].ToString());
+                            Console.WriteLine("\nPulses Name :" + item["name"].ToString());
                             Console.WriteLine("Pulses Price :" + item["price"]);
                             Console.WriteLine("Pulses Weight :" + item["weight"]);
                         }
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-                throw;
+                Console.WriteLine("Exception Occurs : " + exception);
             }
         }
 
@@ -74,20 +82,23 @@ namespace OOPS.InventoryManagement
             var itemName = Console.ReadLine();
             Console.WriteLine("Enter Type Of Item Name : ");
             string itemTypeName = Console.ReadLine();
-            Console.WriteLine("\nEnter Item Price : ");
+            Console.WriteLine("Enter Item Price : ");
             var itemPrice = Console.ReadLine();
-            Console.WriteLine("\nEnter Item Weight : ");
+            Console.WriteLine("Enter Item Weight : ");
             var itemWeight = Console.ReadLine();
-            var newItem = "{ 'name': '" + itemTypeName + "','price':'" + itemPrice + "','weight':'" + itemWeight + "'}";
+            var newItem = "{ 'name': '" + itemTypeName + "','price':" + itemPrice + ",'weight':" + itemWeight + "}";
+
             var json = File.ReadAllText(this.jsonFile);
             var jsonObj = JObject.Parse(json);
+
             var itemArrary = jsonObj.GetValue("Rice") as JArray;
             var newItemObj = JObject.Parse(newItem);
             Console.WriteLine("newitem " + newItemObj);
             itemArrary.Add(newItemObj);
             Console.WriteLine("Name " + itemArrary);
             jsonObj["Rice"] = itemArrary;
-            string newJsonResult = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObj, Newtonsoft.Json.Formatting.Indented);
+
+            string newJsonResult = JsonConvert.SerializeObject(jsonObj, Formatting.Indented);
             File.WriteAllText(this.jsonFile, newJsonResult);
         }
 
@@ -99,20 +110,22 @@ namespace OOPS.InventoryManagement
             string json = File.ReadAllText(this.jsonFile);
             try
             {
-                var jObject = JObject.Parse(json);
+                var jsonObject = JObject.Parse(json);
                 Console.WriteLine("Enter Item Name ");
                 string itemNameToUpdate = Console.ReadLine();
-                JArray riceArrary = (JArray)jObject[itemNameToUpdate];
+                JArray riceArrary = (JArray)jsonObject[itemNameToUpdate];
                 Console.Write("Enter Item Name to Update : ");
                 var itemName = Console.ReadLine();
                 Console.Write("Enter new Item name : ");
                 var newItemName = Convert.ToString(Console.ReadLine());
+
                 foreach (var item in riceArrary.Where(obj => obj["name"].Value<string>().Equals(itemName)))
                 {
                     item["name"] = !string.IsNullOrEmpty(newItemName) ? newItemName : string.Empty;
                 }
-                jObject["name"] = riceArrary;
-                string output = Newtonsoft.Json.JsonConvert.SerializeObject(jObject, Newtonsoft.Json.Formatting.Indented);
+
+                jsonObject["name"] = riceArrary;
+                string output = JsonConvert.SerializeObject(jsonObject, Formatting.Indented);
                 File.WriteAllText(this.jsonFile, output);
             }
             catch (Exception ex)
@@ -132,19 +145,21 @@ namespace OOPS.InventoryManagement
                 var jsonObjectConvert = JObject.Parse(jsonFileRead);
                 Console.WriteLine("Enter Item Name ");
                 string itemNameToDelete = Console.ReadLine();
+
                 JArray itemsArrary = (JArray)jsonObjectConvert[itemNameToDelete];
                 Console.Write("Enter Name to Delete Item : ");
                 var itemName = Console.ReadLine();
+
                 var itemToDeleted = itemsArrary.FirstOrDefault(obj => obj["Rice"].Value<string>().Equals(itemName));
                 itemsArrary.Remove(itemToDeleted);
-                string output = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObjectConvert, Newtonsoft.Json.Formatting.Indented);
+
+                string output = JsonConvert.SerializeObject(jsonObjectConvert, Formatting.Indented);
                 File.WriteAllText(this.jsonFile, output);
             }
-            catch (Exception e)
+            catch (Exception exception)
             {
-                Console.WriteLine("Exception Occurs : " + e);
+                Console.WriteLine("Exception Occurs : " + exception);
             }
         }
     }
 }
-
