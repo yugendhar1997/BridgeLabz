@@ -54,7 +54,12 @@ namespace OOPS
                 cards[rand] = temp;
             }
             return cards;
-        } 
+        }
+
+        /// <summary>
+        /// Prints the cards.
+        /// </summary>
+        /// <param name="cards">The cards.</param>
         public static void PrintCards(string[] cards)
         {
             int noOfPlayers = 4;
