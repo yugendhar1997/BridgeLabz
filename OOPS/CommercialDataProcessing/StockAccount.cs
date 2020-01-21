@@ -1,14 +1,21 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="StockAccount.cs" company="Bridgelabz">
+// Copyright © 2019  Company="BridgeLabz"
+// </copyright>
+// <creator name="Yugendhar Pyata"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace OOPS.CommercialDataProcessing
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
 
+    /// <summary>
+    /// StockAccount Interface Contains All Abstract Methods
+    /// </summary>
     public interface IStockAccountInterface
     {
         /// <summary>
@@ -33,6 +40,9 @@ namespace OOPS.CommercialDataProcessing
         void PrintReport();
     }
 
+    /// <summary>
+    /// StockTransaction Interface
+    /// </summary>
     public interface IStockTarnsaction
     {
         /// <summary>
@@ -57,7 +67,7 @@ namespace OOPS.CommercialDataProcessing
         public void StockAcountCreate()
         {
             ////this line take the path of user details file.
-            string path = @"D:\bridgelabz\ObjectOrientedPrograms\ObjectOrientedPrograms\CommercialDataProcessing\userDetail.json";
+            string path = @"C:\Users\Bridgelabz\source\repos\OOPS\CommercialDataProcessing\userDetail.json";
 
             ////here create number of users.
             Console.WriteLine("How Many User Want To Create Account ");
@@ -98,7 +108,7 @@ namespace OOPS.CommercialDataProcessing
         public double ValueOf()
         {
             ////this line take the path of user details file.
-            string path = @"D:\bridgelabz\ObjectOrientedPrograms\ObjectOrientedPrograms\CommercialDataProcessing\userDetail.json";
+            string path = @"C:\Users\Bridgelabz\source\repos\OOPS\CommercialDataProcessing\userDetail.json";
 
             //// return value
             double availableShare = 0.0;
@@ -158,7 +168,7 @@ namespace OOPS.CommercialDataProcessing
         public void ShowMyAccount()
         {
             ////this line take the path of user details file.
-            string path = @"D:\bridgelabz\ObjectOrientedPrograms\ObjectOrientedPrograms\CommercialDataProcessing\userDetail.json";
+            string path = @"C:\Users\Bridgelabz\source\repos\OOPS\CommercialDataProcessing\userDetail.json";
 
             ////here read all text from file and stored into json string.
             string json = File.ReadAllText(path);
@@ -221,7 +231,7 @@ namespace OOPS.CommercialDataProcessing
             double sharePrice = 0.0;
 
             ////this variable use to check user is valide or not to buy share .
-            double ValideToBuy = 0.0;
+            double valideToBuy = 0.0;
 
             ////this variable use to check total amount of user.
             double totalAmountOfUser = 0;
@@ -231,7 +241,7 @@ namespace OOPS.CommercialDataProcessing
             try
             {
                 ////this line take the path of user details file.
-                string path = @"D:\bridgelabz\ObjectOrientedPrograms\ObjectOrientedPrograms\CommercialDataProcessing\userDetail.json";
+                string path = @"C:\Users\Bridgelabz\source\repos\OOPS\CommercialDataProcessing\userDetail.json";
 
                 ////here read all text from file and stored into json string.
                 string json = File.ReadAllText(path);
@@ -286,9 +296,9 @@ namespace OOPS.CommercialDataProcessing
                 int numberOfShareBuy = Convert.ToInt32(Console.ReadLine());
 
                 ////This code get the stock details to update stock file records.
-                string readPath = @"D:\bridgelabz\ObjectOrientedPrograms\ObjectOrientedPrograms\CommercialDataProcessing\StockDetails.json";
+                string readPath = @"C:\Users\Bridgelabz\source\repos\OOPS\CommercialDataProcessing\StockDetails.json";
                 var json2 = File.ReadAllText(readPath);
-                var jObject = JObject.Parse(json2);
+                var jsonObject = JObject.Parse(json2);
 
                 ////read the file here.
                 string jsonPath = File.ReadAllText(readPath);
@@ -313,7 +323,7 @@ namespace OOPS.CommercialDataProcessing
                 }
 
                 ////this code use to update where user want to buy the share with specified file path.
-                StreamReader streamReaderUser = new StreamReader(@"D:\bridgelabz\ObjectOrientedPrograms\ObjectOrientedPrograms\CommercialDataProcessing\userDetail.json");
+                StreamReader streamReaderUser = new StreamReader(@"C:\Users\Bridgelabz\source\repos\OOPS\CommercialDataProcessing\userDetail.json");
                 string readUserFile = streamReaderUser.ReadToEnd();
                 streamReaderUser.Close();
 
@@ -333,10 +343,10 @@ namespace OOPS.CommercialDataProcessing
                     {
                         totalAmountOfUser = objUser.totalAmountAccountHolder;
                         previousShare = objUser.noOfShareBuyUser + numberOfShareBuy;
-                        ValideToBuy = numberOfShareBuy * sharePrice;
+                        valideToBuy = numberOfShareBuy * sharePrice;
 
                         ////if available balance of user is greater than buying share then true this condition.
-                        if (totalAmountOfUser >= ValideToBuy)
+                        if (totalAmountOfUser >= valideToBuy)
                         {
                             break;
                         }
@@ -350,7 +360,7 @@ namespace OOPS.CommercialDataProcessing
                 ////After Eligible to buy share 
                 ////update the available share of company.
                 availableShareOfStock = availableShareOfStock - numberOfShareBuy;
-                totalAmountOfUser = totalAmountOfUser - ValideToBuy;
+                totalAmountOfUser = totalAmountOfUser - valideToBuy;
 
                 ////this method Update the Campany Shares 
                 this.Save(name, availableShareOfStock, totalAmountOfUser);
@@ -362,7 +372,6 @@ namespace OOPS.CommercialDataProcessing
             {
                 Console.WriteLine("Please Enter Valide Input " + e);
             }
-
         }
 
         /// <summary>
@@ -384,7 +393,7 @@ namespace OOPS.CommercialDataProcessing
             try
             {
                 ////this line take the path of user details file.
-                string path = @"D:\bridgelabz\ObjectOrientedPrograms\ObjectOrientedPrograms\CommercialDataProcessing\userDetail.json";
+                string path = @"C:\Users\Bridgelabz\source\repos\OOPS\CommercialDataProcessing\userDetail.json";
 
                 ////here read all text from file and stored into json string.
                 string json = File.ReadAllText(path);
@@ -443,9 +452,9 @@ namespace OOPS.CommercialDataProcessing
                     int numberOfShareSell = Convert.ToInt32(Console.ReadLine());
 
                     ////This code get the stock details to update stock file records.
-                    string readPath = @"D:\bridgelabz\ObjectOrientedPrograms\ObjectOrientedPrograms\CommercialDataProcessing\StockDetails.json";
+                    string readPath = @"C:\Users\Bridgelabz\source\repos\OOPS\CommercialDataProcessing\StockDetails.json";
                     var json2 = File.ReadAllText(readPath);
-                    var jObject = JObject.Parse(json2);
+                    var jsonObject = JObject.Parse(json2);
 
                     //// read the file here.
                     string jsonPath = File.ReadAllText(readPath);
@@ -470,7 +479,7 @@ namespace OOPS.CommercialDataProcessing
                     }
 
                     ////this code use to update where user want to buy the share with specified file path.
-                    StreamReader streamReaderUser = new StreamReader(@"D:\bridgelabz\ObjectOrientedPrograms\ObjectOrientedPrograms\CommercialDataProcessing\userDetail.json");
+                    StreamReader streamReaderUser = new StreamReader(@"C:\Users\Bridgelabz\source\repos\OOPS\CommercialDataProcessing\userDetail.json");
                     string readUserFile = streamReaderUser.ReadToEnd();
                     streamReaderUser.Close();
 
@@ -538,14 +547,14 @@ namespace OOPS.CommercialDataProcessing
         public static void GetDetails()
         {
             ////this file path used to read the file.
-            string path = @"D:\bridgelabz\ObjectOrientedPrograms\ObjectOrientedPrograms\CommercialDataProcessing\StockDetails.json";
+            string path = @"C:\Users\Bridgelabz\source\repos\OOPS\CommercialDataProcessing\StockDetails.json";
 
             ////read all text start to end of file.
             var json = File.ReadAllText(path);
-            var jObject = JObject.Parse(json);
+            var jsonObject = JObject.Parse(json);
 
             ////it create json array of object.
-            JArray stockArrary = (JArray)jObject["stockReport"];
+            JArray stockArrary = (JArray)jsonObject["stockReport"];
 
             ////if stock array not null then its true condition
             if (stockArrary != null)
@@ -562,15 +571,15 @@ namespace OOPS.CommercialDataProcessing
         }
 
         /// <summary>
-        /// it update stock file.
+        ///  Save Details 
         /// </summary>
-        /// <param name="nameOfStock">nameOfStock</param>
-        /// <param name="availableShareOfStock">availableShareOfStock</param>
-        /// <param name="totalAmountOfUser">totalAmountOfUser</param>
+        /// <param name="nameOfStock"></param>
+        /// <param name="availableShareOfStock"></param>
+        /// <param name="totalAmountOfUser"></param>
         public void Save(string nameOfStock, int availableShareOfStock, double totalAmountOfUser)
         {
             ////this file path used to read the file.
-            string path = @"D:\bridgelabz\ObjectOrientedPrograms\ObjectOrientedPrograms\CommercialDataProcessing\StockDetails.json";
+            string path = @"C:\Users\Bridgelabz\source\repos\OOPS\CommercialDataProcessing\StockDetails.json";
             string json = File.ReadAllText(path);
 
             ////it dynamically create object.
@@ -604,7 +613,7 @@ namespace OOPS.CommercialDataProcessing
         public void Save(string userName, double userTotalAmount, int currentShare)
         {
             ////return path of json file.
-            string path = @"D:\bridgelabz\ObjectOrientedPrograms\ObjectOrientedPrograms\CommercialDataProcessing\userDetail.json";
+            string path = @"C:\Users\Bridgelabz\source\repos\OOPS\CommercialDataProcessing\userDetail.json";
             string json = File.ReadAllText(path);
 
             ////read the file 
@@ -628,7 +637,7 @@ namespace OOPS.CommercialDataProcessing
                     userList.Add(new UserDetails { accountHolderName = objStock.accountHolderName, totalAmountAccountHolder = totalAmount, noOfShareBuyUser = currentShare });
                     string updateUserData = JsonConvert.SerializeObject(userList, Formatting.Indented);
                     ////this write or update the user account details.
-                    StreamWriter streamWriter = new StreamWriter(@"D:\bridgelabz\ObjectOrientedPrograms\ObjectOrientedPrograms\CommercialDataProcessing\userDetail.json");
+                    StreamWriter streamWriter = new StreamWriter(@"C:\Users\Bridgelabz\source\repos\OOPS\CommercialDataProcessing\userDetail.json");
                     streamWriter.WriteLine(updateUserData);
                     streamWriter.Close();
                     break;
@@ -636,5 +645,4 @@ namespace OOPS.CommercialDataProcessing
             }
         }
     }
-
 }
