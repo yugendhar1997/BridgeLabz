@@ -1,22 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="StockReport.cs" company="Bridgelabz">
+// Copyright © 2019  Company="BridgeLabz"
+// </copyright>
+// <creator name="Yugendhar Pyata"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace OOPS.StockManagement
 {
     using System;
     using System.Collections.Generic;
-    using System.IO;
-    using System.Text;
-    using Newtonsoft.Json;
 
-
+    /// <summary>
+    /// Stock Report Details
+    /// </summary>
     public class StockReport
     {
 
         public string nameOfShare { get; set; }
         public int numberOfShare { get; set; }
         public double sharePrice { get; set; }
+
         public void StockGetInput()
         {
             try
@@ -28,13 +30,15 @@ namespace OOPS.StockManagement
                 Console.WriteLine("Enter Price of Per Share ");
                 this.sharePrice = Convert.ToInt32(Console.ReadLine());
             }
-            catch (InvalidCastException i)
+
+            catch (InvalidCastException castException)
             {
-                Console.WriteLine("Please Enter Valide Input " + i);
+                Console.WriteLine("Please Enter Valide Input " + castException);
             }
-            catch (Exception e)
+
+            catch (Exception exception)
             {
-                Console.WriteLine("Please Enter Valide Input" + e);
+                Console.WriteLine("Please Enter Valide Input" + exception);
             }
 
         }
