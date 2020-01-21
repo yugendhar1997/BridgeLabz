@@ -1,27 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="StockAccountOperations.cs" company="Bridgelabz">
+// Copyright © 2019  Company="BridgeLabz"
+// </copyright>
+// <creator name="Yugendhar Pyata"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace OOPS.CommercialDataProcessing
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// Performs Stock Operations
+    /// </summary>
     public class StockAccountOperations
     {
-
+        /// <summary>
+        /// Stocks the account choice.
+        /// </summary>
         public static void StockAccountChoice()
         {
             StockAccount stockAccount = new StockAccount();
-            char again;
+            string repeat;
             do
             {
                 ////here print list of operation which is goining to perform
-                Console.WriteLine("**********************************");
-                Console.WriteLine("1. Create Account \n" + "2. Print Report\n" + "3. Buy Shares\n"
-                    + "4. Show My Account \n" + "5. No of Share \n" + "6. Sell\n");
-                Console.WriteLine("*********************************** ");
+
+                Console.WriteLine("Press 1 : To Create Account");
+                Console.WriteLine("Press 2 : To Print Report");
+                Console.WriteLine("Press 3 : To Buy Shares");
+                Console.WriteLine("Press 4 : To Show My Account Details");
+                Console.WriteLine("Press 5 : To Number Of Shares");
+                Console.WriteLine("Press 6 : To Sell Shares");
 
                 ////take choice from user
                 Console.WriteLine("Enter Your Choice To Run Operation ");
                 int choice = Convert.ToInt32(Console.ReadLine());
+
                 switch (choice)
                 {
                     case 1:
@@ -47,10 +62,10 @@ namespace OOPS.CommercialDataProcessing
                         break;
                 }
 
-                Console.WriteLine("\nDo You want To Continue the Press 'Y' Or 'N' ");
-                again = Console.ReadLine()[0];
+                Console.WriteLine("\nDo You want To Continue the Press 'Yes' Or 'No' ");
+                repeat = Console.ReadLine().ToLower();
             }
-            while (again == 'Y' || again == 'y');
+            while (repeat == "yes");
         }
     }
 }
