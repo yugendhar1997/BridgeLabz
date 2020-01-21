@@ -1,25 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="StockDetails.cs" company="Bridgelabz">
+// Copyright © 2019  Company="BridgeLabz"
+// </copyright>
+// <creator name="Yugendhar Pyata"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace OOPS.CommercialDataProcessing
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text; 
+
+    /// <summary>
+    /// Stock Details
+    /// </summary>
     public class StockDetails
     {
         /// <summary>
         /// this is stock name of company
         /// </summary>
-        public string stockName;
+        private string stockName;
 
         /// <summary>
         /// this variable stored number of share
         /// </summary>
-        public int noOfShare;
+        private int noOfShare;
 
         /// <summary>
         /// this variable stored price of share.
         /// </summary>
-        public double sharePrice;
+        private double sharePrice;
 
         /// <summary>
         /// this method get stock input details.
