@@ -39,24 +39,6 @@ namespace OOPS
         }
         
         /// <summary>
-        /// Shuffles the specified cards.
-        /// </summary>
-        /// <param name="cards">The cards.</param>
-        /// <returns></returns>
-        private static string[] Shuffle(string[] cards)
-        {
-            Random random = new Random();
-            for (int index = 0; index < 53; index++)
-            {
-                int rand = random.Next(52 - index);
-                string temp = cards[index];
-                cards[index] = cards[rand];
-                cards[rand] = temp;
-            }
-            return cards;
-        }
-
-        /// <summary>
         /// Prints the cards.
         /// </summary>
         /// <param name="cards">The cards.</param>
@@ -66,7 +48,8 @@ namespace OOPS
             int totalCards = cards.Length - 1;
             int cardPerPlayer = totalCards / noOfPlayers;
             string[,] players = new string[noOfPlayers, cardPerPlayer];
-            int i = 0; int j = 0; int k = 0;
+            int i = 0; int j = 0; int k = 0; 
+
             while (i < totalCards)
             {
                 j = j % noOfPlayers;
@@ -74,11 +57,12 @@ namespace OOPS
                 ++j; ++i;
                 if (j == noOfPlayers) ++k;
             }
-            for (int l = 0; l < 4; l++)
+
+            for (int outerLoop = 0; outerLoop < 4; outerLoop++)
             {
-                for (int m = 0; m < 9; m++)
+                for (int InnerLoop = 0; InnerLoop < 9; InnerLoop++)
                 {
-                    Console.Write(players[l, m] + "  ");
+                    Console.Write(players[outerLoop, InnerLoop] + "  ");
                 }
                 Console.WriteLine();
             }
