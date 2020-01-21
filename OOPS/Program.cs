@@ -30,6 +30,7 @@ namespace OOPS
                 Console.WriteLine(" Press 3 : Inventory Management");
                 Console.WriteLine(" Press 4 : Stock Account Management");
                 Console.WriteLine(" Press 5 : Deck of Cards");
+                Console.WriteLine(" Press 6 : Commercial Data Processing");
 
                 int input = Convert.ToInt32(Console.ReadLine());
                 switch (input)
@@ -46,10 +47,13 @@ namespace OOPS
                         InventoryDataManagementOperation.DataOperation();
                         break;
                     case 4:
-
+                        StockManagement.StockPortfolio.StockReport();
                         break;
                     case 5:
                         DeckOfCards.PlayGame();
+                        break;
+                    case 6:
+                        CommercialDataProcessing.StockAccountOperations.StockAccountChoice();
                         break;
                 }
 
