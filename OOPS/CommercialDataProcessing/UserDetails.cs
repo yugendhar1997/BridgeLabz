@@ -1,9 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="UserDetails.cs" company="Bridgelabz">
+// Copyright © 2019  Company="BridgeLabz"
+// </copyright>
+// <creator name="Yugendhar Pyata"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace OOPS.CommercialDataProcessing
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// Details of User
+    /// </summary>
     public class UserDetails
     {
         /// <summary>
@@ -24,19 +33,25 @@ namespace OOPS.CommercialDataProcessing
         /// <summary>
         /// this method take all user detail which required to create account.
         /// </summary>
-
+        /// <value>
+        /// The name of the account holder.
+        /// </value>
         public string AccountHolderName
         {
             get
             {
                 return accountHolderName;
-            }
+            } 
+
             set
             {
                 accountHolderName = value;
             }
         }
 
+        /// <summary>
+        /// Uses the get input.
+        /// </summary>
         public void UseGetInput()
         {
             ////here user enter user name
@@ -48,5 +63,4 @@ namespace OOPS.CommercialDataProcessing
             totalAmountAccountHolder = Convert.ToInt32(Console.ReadLine());
         }
     }
-
 }
