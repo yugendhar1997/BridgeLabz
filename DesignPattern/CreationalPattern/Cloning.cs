@@ -1,8 +1,9 @@
-﻿//-----------------------------------------------------------------------
-// <copyright file="Cloning.cs" company="Bridgelabz" Author="Jayashree sawakare">
-// Company copyright tag.
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Cloning.cs" company="Bridgelabz">
+// Copyright © 2019  Company="BridgeLabz"
 // </copyright>
-//----------------------------------------------------------------------
+// <creator name="Yugendhar Pyata"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace DesignPatterns.CreationalPattern
 {
     using System;
@@ -10,12 +11,12 @@ namespace DesignPatterns.CreationalPattern
     using System.Text;
 
     /// <summary>
-    /// This is the class for clonning.
+    /// This is the class for cloning.
     /// </summary>
     public class Cloning
     {
         /// <summary>
-        /// method to perform Cloning operation.
+        /// Clonings the operation.
         /// </summary>
         public static void CloningOperation()
         {
@@ -26,19 +27,19 @@ namespace DesignPatterns.CreationalPattern
             string name = Console.ReadLine();
             Console.WriteLine("Enter Your Salary ");
             int salary = Convert.ToInt32(Console.ReadLine());
-            developer.employeeId = id;
-            developer.employeeName = name;
-            developer.employeeSalary = salary;
-            developer.getDetails();
+
+            developer.EmployeeId = id;
+            developer.EmployeeName = name;
+            developer.EmployeeSalary = salary;
+
+            developer.GetDetails();
             Developer developerClone = (Developer)developer.Clone();
+
             Console.WriteLine("Enter Name to Change Clone");
             name = Console.ReadLine();
-            developerClone.employeeName = name;
+            developerClone.EmployeeName = name;
             Console.WriteLine("After Cloning");
-            developerClone.getDetails();
+            developerClone.GetDetails();
         }
     }
 }
-
-
-
