@@ -31,28 +31,38 @@ namespace DesignPatterns.CreationalPattern
         /// <summary>
         /// this is abstract method get details of employee
         /// </summary>
-        void getDetails();
+        void GetDetails();
     }
 
     /// <summary>
-    /// this class implemented by employee
+    /// This Class Implemented by Employee
     /// </summary>
+    /// <seealso cref="DesignPatterns.CreationalPattern.IEmployee" />
     public class Developer : IEmployee
     {
         /// <summary>
-        /// it hold the employee id
+        /// Gets or sets the employee identifier.
         /// </summary>
-        public int employeeId { set; get; }
+        /// <value>
+        /// The employee identifier.
+        /// </value>
+        public int EmployeeId { get; set; }
 
         /// <summary>
-        /// it hold employee name
+        /// Gets or sets the name of the employee.
         /// </summary>
-        public string employeeName { set; get; }
+        /// <value>
+        /// The name of the employee.
+        /// </value>
+        public string EmployeeName { get; set; }
 
         /// <summary>
-        /// it hold employee salary
+        /// Gets or sets the employee salary.
         /// </summary>
-        public int employeeSalary { get; set; }
+        /// <value>
+        /// The employee salary.
+        /// </value>
+        public int EmployeeSalary { get; set; }
 
         /// <summary>
         /// this method used to create clone of employee
@@ -70,9 +80,9 @@ namespace DesignPatterns.CreationalPattern
         /// <summary>
         /// this method print employee details
         /// </summary>
-        public void getDetails()
+        public void GetDetails()
         {
-            Console.WriteLine("Developer :\nId : {0}, Name : {1}, Salary :{2}", employeeId, employeeName, employeeSalary);
+            Console.WriteLine("Developer :\nId : {0}, Name : {1}, Salary :{2}", this.EmployeeId, this.EmployeeName, this.EmployeeSalary);
         }
     }
 
@@ -82,24 +92,35 @@ namespace DesignPatterns.CreationalPattern
     public class Tester : IEmployee
     {
         /// <summary>
-        /// it hold employee id
+        /// Gets or sets the employee identifier.
         /// </summary>
-        public int employeeId { set; get; }
+        /// <value>
+        /// The employee identifier.
+        /// </value>
+        public int EmployeeId { get; set; }
 
         /// <summary>
-        /// it hold employee name
+        /// Gets or sets the name of the employee.
         /// </summary>
-        public string employeeName { set; get; }
+        /// <value>
+        /// The name of the employee.
+        /// </value>
+        public string EmployeeName { get; set; }
 
         /// <summary>
-        /// it hold employee salary
+        /// Gets or sets the employee salary.
         /// </summary>
-        public int employeeSalary { get; set; }
+        /// <value>
+        /// The employee salary.
+        /// </value>
+        public int EmployeeSalary { get; set; }
 
         /// <summary>
-        /// this method create clone of employee
+        /// this is abstract method of Employee
         /// </summary>
-        /// <returns>it return clone object</returns>
+        /// <returns>
+        /// it return object
+        /// </returns>
         public IEmployee Clone()
         {
             //// return clone of employee object
@@ -108,12 +129,11 @@ namespace DesignPatterns.CreationalPattern
         }
 
         /// <summary>
-        /// this method print employee details
+        /// this is abstract method get details of employee
         /// </summary>
-        public void getDetails()
+        public void GetDetails()
         {
-            Console.WriteLine("Tester : \nId : {0} Name {1} :{1} Salary :{2}", this.employeeId, this.employeeName, this.employeeSalary);
+            Console.WriteLine("Tester : \nId : {0} Name {1} :{1} Salary :{2}", this.EmployeeId, this.EmployeeName, this.EmployeeSalary);
         }
     }
 }
-
