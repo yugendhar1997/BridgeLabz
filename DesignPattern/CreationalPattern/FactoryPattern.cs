@@ -20,7 +20,7 @@ namespace DesignPatterns.CreationalPattern
         /// </summary>
         /// <param name="product">take a product name</param>
         /// <returns>it return object of Computer</returns>
-        public abstract IComputer getUserDecidedConfiguration(string product);
+        public abstract IComputer GetUserDecidedConfiguration(string product);
     }
 
     /// <summary>
@@ -33,7 +33,7 @@ namespace DesignPatterns.CreationalPattern
         /// </summary>
         /// <param name="newProduct">takes the product name</param>
         /// <returns>return the object of computer</returns>
-        public override IComputer getUserDecidedConfiguration(string newProduct)
+        public override IComputer GetUserDecidedConfiguration(string newProduct)
         {
             //// this switch case use to decide which object should created at runtime
             switch (newProduct)
@@ -64,7 +64,7 @@ namespace DesignPatterns.CreationalPattern
         /// <param name="ram">take RAM</param>
         /// <param name="harddisk">take HardDisk</param>
         /// <param name="processor">take Processor</param>
-        abstract void getConfiguration();
+        abstract void GetConfiguration();
     }
 
     /// <summary>
@@ -94,7 +94,7 @@ namespace DesignPatterns.CreationalPattern
         /// <param name="ram">take ram</param>
         /// <param name="harddisk">take hardDisk</param>
         /// <param name="processor">take processor</param>
-        public void getConfiguration()
+        public void GetConfiguration()
         {
             //// print all configuration of PC
             Console.WriteLine("PC Congiguration \nRam : {0}\tHardDisk : {1}\tProcessor : {2}", ram, hardDisk, processor);
@@ -116,7 +116,7 @@ namespace DesignPatterns.CreationalPattern
         /// <param name="ram">take RAM</param>
         /// <param name="harddisk">take HardDisk</param>
         /// <param name="processor">take Processor</param>
-        public void getConfiguration()
+        public void GetConfiguration()
         {
 
             //// print all configuration of Laptop
@@ -150,7 +150,7 @@ namespace DesignPatterns.CreationalPattern
         /// <param name="processor">take processor value</param>
         /// <param name="memory">take memory</param>
         /// <param name="nic">take NIC</param>
-        public void getConfiguration()
+        public void GetConfiguration()
         {
             //// print server  configuration
             Console.WriteLine("Server Congiguration \nProcessor : {0}\tMemory : {1}\tNic : {2}", processor, memory, nic);
