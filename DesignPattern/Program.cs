@@ -1,13 +1,13 @@
 ﻿namespace DesignPattern
 {
-    using DesignPatterns.BehavioralDesignPatterns;
+    using DesignPatterns.BehavioralDesignPattern;
     using DesignPatterns.CreationalPattern;
     using DesignPatterns.Singleton;
     using DesignPatterns.StructuralDesignPattern;
     using System;
     using System.Collections.Generic;
-    using static DesignPatterns.BehavioralDesignPatterns.ChatMediatorImpl;
-    using static DesignPatterns.BehavioralDesignPatterns.MyTopic;
+    using static DesignPatterns.BehavioralDesignPattern.ChatMediatorImp;
+    using static DesignPatterns.BehavioralDesignPattern.MyTopic;
 
     /// <summary>
     /// This is main class of Program.
