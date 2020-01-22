@@ -1,23 +1,23 @@
-﻿//-----------------------------------------------------------------------
-// <copyright file="FactoryClient.cs" company="Bridgelabz" Author="Jayashree sawakare">
-// Company copyright tag.
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="FactoryClient.cs" company="Bridgelabz">
+// Copyright © 2019  Company="BridgeLabz"
 // </copyright>
-//----------------------------------------------------------------------
+// <creator name="Yugendhar Pyata"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace DesignPatterns.CreationalPattern
 {
     using System;
     using System.Collections.Generic;
     using System.Text;
 
-
     /// <summary>
-    /// this is client Factory class which has client reqiurment method that provide the choice to user 
+    /// this is client Factory class which has client requirement method that provide the choice to user 
     /// to take a particular product at run time. 
     /// </summary>
     public class FactoryClient
     {
         /// <summary>
-        /// this method used by client
+        /// Clients the requirement.
         /// </summary>
         public static void ClientRequirement()
         {
@@ -27,12 +27,13 @@ namespace DesignPatterns.CreationalPattern
             string productName = Console.ReadLine();
             try
             {
-                IComputer computer = concreateFactory.getUserDecidedConfiguration(productName);
+                IComputer computer = concreateFactory.GetUserDecidedConfiguration(productName);
                 if (computer == null)
                 {
                     Console.WriteLine("Your Product Not Made in this Factory");
                 }
-                computer.getConfiguration();
+
+                computer.GetConfiguration();
             }
             catch (NullReferenceException e)
             {
