@@ -17,7 +17,7 @@ namespace DesignPatterns.BehavioralDesignPattern
     public class Book : ItemElement
     {
         private int price;
-        private String isbnNumber;
+        private string isbnNumber;
         /// <summary>
         /// Initializes a new instance of the <see cref="Book"/> class.
         /// </summary>
@@ -49,9 +49,9 @@ namespace DesignPatterns.BehavioralDesignPattern
         /// </summary>
         /// <param name="visitor">The visitor.</param>
         /// <returns></returns>
-        public int accept(ShoppingCartVisitor visitor)
+        public int Accept(IShoppingCartVisitor visitor)
         {
-            return visitor.visit(this);
+            return visitor.Visit(this);
         }
     }
     /// <summary>
@@ -105,23 +105,23 @@ namespace DesignPatterns.BehavioralDesignPattern
         /// </summary>
         /// <param name="visitor">The visitor.</param>
         /// <returns></returns>
-        public int accept(ShoppingCartVisitor visitor)
+        public int Accept(IShoppingCartVisitor visitor)
         {
-            return visitor.visit(this);
+            return visitor.Visit(this);
         }
     }
     /// <summary>
     /// class for ShoppingCartVisitorImplementation which implement ShoppingCartVisitor.
     /// </summary>
     /// <seealso cref="DesignPattern.BehavioralDesignPatterns.ShoppingCartVisitor" />
-    public class ShoppingCartVisitorImpl : ShoppingCartVisitor
+    public class ShoppingCartVisitorImpl : IShoppingCartVisitor
     {
         /// <summary>
         /// Visits the specified book.
         /// </summary>
         /// <param name="book">The book.</param>
         /// <returns></returns>
-        public int visit(Book book)
+        public int Visit(Book book)
         {
             int cost = 0;
             if (book.getPrice() > 50)
@@ -137,7 +137,7 @@ namespace DesignPatterns.BehavioralDesignPattern
         /// </summary>
         /// <param name="fruit">The fruit.</param>
         /// <returns></returns>
-        public int visit(Fruit fruit)
+        public int Visit(Fruit fruit)
         {
             int cost = fruit.getPricePerKg() * fruit.getWeight();
             Console.WriteLine(fruit.getName() + " cost = " + cost);
