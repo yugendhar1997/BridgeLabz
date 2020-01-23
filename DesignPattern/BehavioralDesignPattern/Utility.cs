@@ -1,15 +1,14 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ShoppingCartVisitor.cs" company="Bridgelabz">
+// <copyright file="Utility.cs" company="Bridgelabz">
 // Copyright © 2019  Company="BridgeLabz"
 // </copyright>
 // <creator name="Yugendhar Pyata"/>
 // --------------------------------------------------------------------------------------------------------------------
 namespace DesignPatterns.BehavioralDesignPattern
 {
-    using DesignPatterns.StructuralDesignPattern;
     using System;
     using System.Collections.Generic;
-    using System.Text;
+    using DesignPatterns.StructuralDesignPattern;
     using static DesignPatterns.BehavioralDesignPattern.MyTopic;
 
     /// <summary>
@@ -22,11 +21,11 @@ namespace DesignPatterns.BehavioralDesignPattern
         /// </summary>
         public static void ChatMediatorProgram()
         {
-            ChatMediator mediator = new ChatMediatorImp();
-            User user1 = new UserImpl(mediator, "Pankaj");
-            User user2 = new UserImpl(mediator, "Lisa");
-            User user3 = new UserImpl(mediator, "Saurabh");
-            User user4 = new UserImpl(mediator, "David");
+            IChatMediator mediator = new ChatMediatorImp();
+            User user1 = new UserImp(mediator, "Pankaj");
+            User user2 = new UserImp(mediator, "Lisa");
+            User user3 = new UserImp(mediator, "Saurabh");
+            User user4 = new UserImp(mediator, "David");
             mediator.AddUser(user1);
             mediator.AddUser(user2);
             mediator.AddUser(user3);
@@ -43,7 +42,9 @@ namespace DesignPatterns.BehavioralDesignPattern
             List<string> product = venderAdapter.getProducts();
             Console.WriteLine("Adapter Class Object Called Here : ");
             foreach (string item in product)
+            {
                 Console.Write("    " + item);
+            }
         }
 
         /// <summary>
@@ -52,27 +53,30 @@ namespace DesignPatterns.BehavioralDesignPattern
         public static void ObserverProgram()
         {
             MyTopic topic = new MyTopic();
-            Observer obj1 = new MyTopicSubscriber("Obj1");
-            Observer obj2 = new MyTopicSubscriber("Obj2");
-            Observer obj3 = new MyTopicSubscriber("Obj3");
-            topic.register(obj1);
-            topic.register(obj2);
-            topic.register(obj3);
-            obj1.setSubject(topic);
-            obj2.setSubject(topic);
-            obj3.setSubject(topic);
-            obj1.update();
+            IObserver obj1 = new MyTopicSubscriber("Obj1");
+            IObserver obj2 = new MyTopicSubscriber("Obj2");
+            IObserver obj3 = new MyTopicSubscriber("Obj3");
+            topic.Register(obj1);
+            topic.Register(obj2);
+            topic.Register(obj3);
+            obj1.SetSubject(topic);
+            obj2.SetSubject(topic);
+            obj3.SetSubject(topic);
+            obj1.Update();
             topic.postMessage("New Message");
         }
 
         /// <summary>
-        /// method for Shoppings item.
+        /// method for Shopping item.
         /// </summary>
         public static void Shopping()
         {
-            ItemElement[] items = new ItemElement[]{new Book(20, "1234"),new Book(100, "5678"),
-      new Fruit(10, 2, "Banana"), new Fruit(5, 5, "Apple")};
-            int total = calculatePrice(items);
+            ItemElement[] items = new ItemElement[]
+            {
+                new Book(20, "1234"), new Book(100, "5678"),
+                new Fruit(10, 2, "Banana"), new Fruit(5, 5, "Apple")
+            };
+            int total = CalculatePrice(items);
             Console.WriteLine("Total Cost = " + total);
         }
 
@@ -80,15 +84,16 @@ namespace DesignPatterns.BehavioralDesignPattern
         /// Method To Calculate the price.
         /// </summary>
         /// <param name="items">The items.</param>
-        /// <returns></returns>
-        private static int calculatePrice(ItemElement[] items)
+        /// <returns>sum</returns>
+        private static int CalculatePrice(ItemElement[] items)
         {
-            ShoppingCartVisitor visitor = new ShoppingCartVisitorImpl();
+            IShoppingCartVisitor visitor = new ShoppingCartVisitorImpl();
             int sum = 0;
             foreach (ItemElement item in items)
             {
-                sum = sum + item.accept(visitor);
+                sum = sum + item.Accept(visitor);
             }
+
             return sum;
         }
     }
