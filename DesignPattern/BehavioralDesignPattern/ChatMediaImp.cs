@@ -8,18 +8,20 @@ namespace DesignPatterns.BehavioralDesignPattern
 {
     using System;
     using System.Collections.Generic;
-    using System.Text;
 
     /// <summary>
     /// this is the chat mediator implementation class.
     /// </summary>
     /// <seealso cref="DesignPattern.BehavioralDesignPatterns.ChatMediator" />
-    public class ChatMediatorImp : ChatMediator
+    public class ChatMediatorImp : IChatMediator
     {
+        /// <summary>
+        /// The users
+        /// </summary>
         private List<User> users;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ChatMediatorImpl"/> class.
+        /// Initializes a new instance of the <see cref="ChatMediatorImp"/> class.
         /// </summary>
         public ChatMediatorImp()
         {
@@ -53,17 +55,17 @@ namespace DesignPatterns.BehavioralDesignPattern
     }
 
     /// <summary>
-    /// This is an User Implementation class.
+    /// User Implementation Class
     /// </summary>
-    /// <seealso cref="DesignPattern.BehavioralDesignPatterns.User" />
-    public class UserImpl : User
+    /// <seealso cref="DesignPatterns.BehavioralDesignPattern.User" />
+    public class UserImp : User
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UserImpl"/> class.
+        /// Initializes a new instance of the <see cref="UserImp"/> class.
         /// </summary>
         /// <param name="med">The med.</param>
         /// <param name="name">The name.</param>
-        public UserImpl(ChatMediator med, string name) : base(med, name)
+        public UserImp(IChatMediator med, string name) : base(med, name)
         {
         }
 
@@ -73,8 +75,8 @@ namespace DesignPatterns.BehavioralDesignPattern
         /// <param name="msg">The MSG.</param>
         public override void Send(string msg)
         {
-            Console.WriteLine(this.name + ": Sending Message=" + msg);
-            mediator.SendMessage(msg, this);
+            Console.WriteLine(this.Name + ": Sending Message=" + msg);
+            Mediator.SendMessage(msg, this);
         }
 
         /// <summary>
@@ -83,7 +85,7 @@ namespace DesignPatterns.BehavioralDesignPattern
         /// <param name="msg">The MSG.</param>
         public override void Receive(string msg)
         {
-            Console.WriteLine(this.name + ": Received Message:" + msg);
+            Console.WriteLine(this.Name + ": Received Message:" + msg);
         }
     }
 }
