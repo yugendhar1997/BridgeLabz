@@ -7,17 +7,15 @@
 namespace DesignPatterns.BehavioralDesignPattern
 {
     using System;
-    using System.Collections;
     using System.Collections.Generic;
-    using System.Text;
 
     /// <summary>
     /// This is the class for Mytopic which implement subject interface.
     /// </summary>
     /// <seealso cref="DesignPattern.BehavioralDesignPatterns.Subject" />
-    public class MyTopic : Subject
+    public class MyTopic : ISubject
     {
-        private List<Observer> observers;
+        private List<IObserver> observers;
         private String message;
         private bool changed;
         private Object MUTEX = new Object();
@@ -27,55 +25,60 @@ namespace DesignPatterns.BehavioralDesignPattern
         /// </summary>
         public MyTopic()
         {
-            this.observers = new List<Observer>();
+            this.observers = new List<IObserver>();
         }
+
         /// <summary>
         /// method to Register the specified object.
         /// </summary>
         /// <param name="obj">The object.</param>
-        public void register(Observer obj)
+        public void Register(IObserver obj)
         {
             if (!observers.Contains(obj)) observers.Add(obj);
         }
+
         /// <summary>
         /// method to Unregister specified object.
         /// </summary>
         /// <param name="obj">The object.</param>
-        public void unregister(Observer obj)
+        public void Unregister(IObserver obj)
         {
             lock (MUTEX)
             {
                 observers.Remove(obj);
             }
         }
+
         /// <summary>
         /// method to Notifies the observer.
         /// </summary>
-        public void notifyObservers()
+        public void NotifyObservers()
         {
-            List<Observer> observersLocal = null;
-            //synchronization is used to make sure any observer registered after message is received is not notified
+            List<IObserver> observersLocal = null;
+            ////synchronization is used to make sure any observer registered after message is received is not notified
             lock (MUTEX)
             {
-                if (!changed)
+                if (!this.changed)
                     return;
-                observersLocal = new List<Observer>(this.observers);
+                observersLocal = new List<IObserver>(this.observers);
                 this.changed = false;
             }
-            foreach (Observer obj in observersLocal)
+            foreach (IObserver obj in observersLocal)
             {
-                obj.update();
+                obj.Update();
             }
         }
+
         /// <summary>
         /// method to Get the update.
         /// </summary>
         /// <param name="obj">The object.</param>
         /// <returns></returns>
-        public Object getUpdate(Observer obj)
+        public Object GetUpdate(IObserver obj)
         {
             return this.message;
         }
+
         /// <summary>
         /// method to Post the message.
         /// </summary>
@@ -85,24 +88,26 @@ namespace DesignPatterns.BehavioralDesignPattern
             Console.WriteLine("Message Posted to Topic:" + msg);
             this.message = msg;
             this.changed = true;
-            notifyObservers();
+            NotifyObservers();
         }
+
         /// <summary>
         /// method to Get the update.
         /// </summary>
         /// <returns></returns>
-        public string getUpdate()
+        public string GetUpdate()
         {
             return this.message;
         }
+
         /// <summary>
         /// This is the class for Mytopic Subsciber which implement Observer interface.
         /// </summary>
         /// <seealso cref="DesignPattern.BehavioralDesignPatterns.Observer" />
-        public class MyTopicSubscriber : Observer
+        public class MyTopicSubscriber : IObserver
         {
             private String name;
-            private Subject topic;
+            private ISubject topic;
             /// <summary>
             /// Initializes a new instance of the <see cref="MyTopicSubscriber"/> class.
             /// </summary>
@@ -114,9 +119,9 @@ namespace DesignPatterns.BehavioralDesignPattern
             /// <summary>
             /// method to Update the instance.
             /// </summary>
-            public void update()
+            public void Update()
             {
-                String msg = (String)topic.getUpdate();
+                String msg = (String)topic.GetUpdate();
                 if (msg == null)
                 {
                     Console.WriteLine(name + ":: No new message");
@@ -126,11 +131,12 @@ namespace DesignPatterns.BehavioralDesignPattern
                     Console.WriteLine(name + ":: Consuming message::" + msg);
                 }
             }
+
             /// <summary>
             /// method to Set the subject.
             /// </summary>
             /// <param name="sub">The sub.</param>
-            public void setSubject(Subject sub)
+            public void SetSubject(ISubject sub)
             {
                 this.topic = sub;
             }
