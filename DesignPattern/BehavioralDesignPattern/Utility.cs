@@ -21,11 +21,11 @@ namespace DesignPatterns.BehavioralDesignPattern
         /// </summary>
         public static void ChatMediatorProgram()
         {
-            IChatMediator mediator = new ChatMediatorImp();
-            User user1 = new UserImp(mediator, "Pankaj");
-            User user2 = new UserImp(mediator, "Lisa");
-            User user3 = new UserImp(mediator, "Saurabh");
-            User user4 = new UserImp(mediator, "David");
+            IChatMediator mediator = new ChatMediaImp();
+            User user1 = new UserImp(mediator, "Yugendhar");
+            User user2 = new UserImp(mediator, "Sunil");
+            User user3 = new UserImp(mediator, "Praveen");
+            User user4 = new UserImp(mediator, "Suresh");
             mediator.AddUser(user1);
             mediator.AddUser(user2);
             mediator.AddUser(user3);
@@ -39,7 +39,7 @@ namespace DesignPatterns.BehavioralDesignPattern
         public static void VendorAdapterProgram()
         {
             VenderAdapter venderAdapter = new VenderAdapter();
-            List<string> product = venderAdapter.getProducts();
+            List<string> product = venderAdapter.GetProducts();
             Console.WriteLine("Adapter Class Object Called Here : ");
             foreach (string item in product)
             {
@@ -53,17 +53,17 @@ namespace DesignPatterns.BehavioralDesignPattern
         public static void ObserverProgram()
         {
             MyTopic topic = new MyTopic();
-            IObserver obj1 = new MyTopicSubscriber("Obj1");
-            IObserver obj2 = new MyTopicSubscriber("Obj2");
-            IObserver obj3 = new MyTopicSubscriber("Obj3");
-            topic.Register(obj1);
-            topic.Register(obj2);
-            topic.Register(obj3);
-            obj1.SetSubject(topic);
-            obj2.SetSubject(topic);
-            obj3.SetSubject(topic);
-            obj1.Update();
-            topic.postMessage("New Message");
+            IObserver object1 = new MyTopicSubscriber("Obj1");
+            IObserver object2 = new MyTopicSubscriber("Obj2");
+            IObserver object3 = new MyTopicSubscriber("Obj3");
+            topic.Register(object1);
+            topic.Register(object2);
+            topic.Register(object3);
+            object1.SetSubject(topic);
+            object2.SetSubject(topic);
+            object3.SetSubject(topic);
+            object1.Update();
+            topic.PostMessage("New Message");
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace DesignPatterns.BehavioralDesignPattern
         /// Method To Calculate the price.
         /// </summary>
         /// <param name="items">The items.</param>
-        /// <returns>sum</returns>
+        /// <returns>The sum</returns>
         private static int CalculatePrice(ItemElement[] items)
         {
             IShoppingCartVisitor visitor = new ShoppingCartVisitorImpl();
