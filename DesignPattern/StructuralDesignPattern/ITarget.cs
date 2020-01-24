@@ -19,7 +19,6 @@ namespace DesignPatterns.StructuralDesignPattern
         /// this is abstract method
         /// </summary>
         /// <returns>list of product</returns>
-        public List<string> getProducts();
+        public List<string> GetProducts();
     }
-
 }
