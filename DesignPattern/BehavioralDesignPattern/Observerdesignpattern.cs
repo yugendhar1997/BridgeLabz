@@ -10,15 +10,30 @@ namespace DesignPatterns.BehavioralDesignPattern
     using System.Collections.Generic;
 
     /// <summary>
-    /// This is the class for Mytopic which implement subject interface.
+    /// My Topic Implements Subject Interface
     /// </summary>
-    /// <seealso cref="DesignPattern.BehavioralDesignPatterns.Subject" />
+    /// <seealso cref="DesignPatterns.BehavioralDesignPattern.ISubject" />
     public class MyTopic : ISubject
     {
+        /// <summary>
+        /// The observers
+        /// </summary>
         private List<IObserver> observers;
-        private String message;
+
+        /// <summary>
+        /// The message
+        /// </summary>
+        private string message;
+
+        /// <summary>
+        /// The changed
+        /// </summary>
         private bool changed;
-        private Object MUTEX = new Object();
+
+        /// <summary>
+        /// The mutex
+        /// </summary>
+        private object mutex = new object();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MyTopic"/> class.
@@ -34,7 +49,7 @@ namespace DesignPatterns.BehavioralDesignPattern
         /// <param name="obj">The object.</param>
         public void Register(IObserver obj)
         {
-            if (!observers.Contains(obj)) observers.Add(obj);
+            if (!observers.Contains(obj)) this.observers.Add(obj);
         }
 
         /// <summary>
@@ -43,9 +58,9 @@ namespace DesignPatterns.BehavioralDesignPattern
         /// <param name="obj">The object.</param>
         public void Unregister(IObserver obj)
         {
-            lock (MUTEX)
+            lock (this.mutex)
             {
-                observers.Remove(obj);
+                this.observers.Remove(obj);
             }
         }
 
@@ -56,13 +71,17 @@ namespace DesignPatterns.BehavioralDesignPattern
         {
             List<IObserver> observersLocal = null;
             ////synchronization is used to make sure any observer registered after message is received is not notified
-            lock (MUTEX)
+            lock (this.mutex)
             {
                 if (!this.changed)
+                {
                     return;
+                }
+
                 observersLocal = new List<IObserver>(this.observers);
                 this.changed = false;
             }
+
             foreach (IObserver obj in observersLocal)
             {
                 obj.Update();
@@ -73,8 +92,8 @@ namespace DesignPatterns.BehavioralDesignPattern
         /// method to Get the update.
         /// </summary>
         /// <param name="obj">The object.</param>
-        /// <returns></returns>
-        public Object GetUpdate(IObserver obj)
+        /// <returns>The Message</returns>
+        public object GetUpdate(IObserver obj)
         {
             return this.message;
         }
@@ -82,63 +101,72 @@ namespace DesignPatterns.BehavioralDesignPattern
         /// <summary>
         /// method to Post the message.
         /// </summary>
-        /// <param name="msg">The MSG.</param>
-        public void postMessage(String msg)
+        /// <param name="message">The MSG.</param>
+        public void PostMessage(string message)
         {
-            Console.WriteLine("Message Posted to Topic:" + msg);
-            this.message = msg;
+            Console.WriteLine("Message Posted to Topic:" + message);
+            this.message = message;
             this.changed = true;
-            NotifyObservers();
+            this.NotifyObservers();
         }
 
         /// <summary>
         /// method to Get the update.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The Message</returns>
         public string GetUpdate()
         {
             return this.message;
         }
 
         /// <summary>
-        /// This is the class for Mytopic Subsciber which implement Observer interface.
+        /// My Topic Subscriber Which Implements Observer Interface
         /// </summary>
-        /// <seealso cref="DesignPattern.BehavioralDesignPatterns.Observer" />
+        /// <seealso cref="DesignPatterns.BehavioralDesignPattern.IObserver" />
         public class MyTopicSubscriber : IObserver
         {
-            private String name;
+            /// <summary>
+            /// The name
+            /// </summary>
+            private string name;
+
+            /// <summary>
+            /// The topic
+            /// </summary>
             private ISubject topic;
+
             /// <summary>
             /// Initializes a new instance of the <see cref="MyTopicSubscriber"/> class.
             /// </summary>
-            /// <param name="nm">The nm.</param>
-            public MyTopicSubscriber(String nm)
+            /// <param name="name">The nm.</param>
+            public MyTopicSubscriber(string name)
             {
-                this.name = nm;
+                this.name = name;
             }
+
             /// <summary>
             /// method to Update the instance.
             /// </summary>
             public void Update()
             {
-                String msg = (String)topic.GetUpdate();
-                if (msg == null)
+                string message = (string)this.topic.GetUpdate();
+                if (message == null)
                 {
-                    Console.WriteLine(name + ":: No new message");
+                    Console.WriteLine(this.name + ":: No new message");
                 }
                 else
                 {
-                    Console.WriteLine(name + ":: Consuming message::" + msg);
+                    Console.WriteLine(this.name + ":: Consuming message::" + message);
                 }
             }
 
             /// <summary>
             /// method to Set the subject.
             /// </summary>
-            /// <param name="sub">The sub.</param>
-            public void SetSubject(ISubject sub)
+            /// <param name="subject">The sub.</param>
+            public void SetSubject(ISubject subject)
             {
-                this.topic = sub;
+                this.topic = subject;
             }
         }
     }
