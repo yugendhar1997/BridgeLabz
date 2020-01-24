@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ShoppingCartVisitor.cs" company="Bridgelabz">
+// <copyright file="IShoppingCartVisitor.cs" company="Bridgelabz">
 // Copyright © 2019  Company="BridgeLabz"
 // </copyright>
 // <creator name="Yugendhar Pyata"/>
@@ -19,14 +19,14 @@ namespace DesignPatterns.BehavioralDesignPattern
         /// Visits the specified book.
         /// </summary>
         /// <param name="book">The book.</param>
-        /// <returns> book </returns>
+        /// <returns>The book</returns>
         int Visit(Book book);
 
         /// <summary>
         /// Visits the specified fruit.
         /// </summary>
         /// <param name="fruit">The fruit.</param>
-        /// <returns> fruit </returns>
+        /// <returns>The fruit</returns>
         int Visit(Fruit fruit);
     }
 
@@ -39,7 +39,7 @@ namespace DesignPatterns.BehavioralDesignPattern
         /// Accepts the specified visitor.
         /// </summary>
         /// <param name="visitor">The visitor.</param>
-        /// <returns> visitor </returns>
+        /// <returns>The visitor</returns>
         public int Accept(IShoppingCartVisitor visitor);
     }
 }
