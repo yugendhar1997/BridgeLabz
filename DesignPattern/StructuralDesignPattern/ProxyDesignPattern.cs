@@ -7,8 +7,6 @@
 namespace DesignPatterns.StructuralDesignPattern
 {
     using System;
-    using System.Collections.Generic;
-    using System.Text;
 
     /// <summary>
     /// This is the class for Proxy Design Pattern.
@@ -16,13 +14,14 @@ namespace DesignPatterns.StructuralDesignPattern
     public class ProxyDesignPattern
     {
         /// <summary>
-        /// method for Atm withdrawal.
+        /// method for ATM withdrawal.
         /// </summary>
         public static void AtmWithdrawal()
         {
             Customer customer = new Customer();
             Console.WriteLine("Enter Available Balance");
             Customer.AvailableBalance = Convert.ToDouble(Console.ReadLine());
+
             AtmProxy atmProxy = new AtmProxy();
             Console.WriteLine("ATM Object Performing Operation");
             Console.WriteLine("Available Balance After Withdrawal : " + atmProxy.WithdrawCash());
