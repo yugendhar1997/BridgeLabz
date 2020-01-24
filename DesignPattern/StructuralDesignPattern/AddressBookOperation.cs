@@ -19,14 +19,17 @@ namespace DesignPatterns.StructuralDesignPattern
         /// method to Get the details.
         /// </summary>
         public void GetDetails();
+
         /// <summary>
         /// method to Add the item.
         /// </summary>
         public void AddItem();
+
         /// <summary>
         /// method to Update the file.
         /// </summary>
         public void UpdateFile();
+
         /// <summary>
         /// method to Delete the item.
         /// </summary>
