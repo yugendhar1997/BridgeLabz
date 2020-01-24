@@ -53,13 +53,13 @@ namespace DesignPatterns.BehavioralDesignPattern
         /// Gets the update.
         /// </summary>
         /// <param name="obj">The object.</param>
-        /// <returns>obj</returns>
-       public Object GetUpdate(IObserver obj);
+        /// <returns>The object</returns>
+        public object GetUpdate(IObserver obj);
 
         /// <summary>
         /// Gets the update.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The Status</returns>
         string GetUpdate();
     }
 }
