@@ -47,24 +47,24 @@ namespace DesignPatterns.BehavioralDesignPattern
         /// <summary>
         /// Initializes a new instance of the <see cref="User"/> class.
         /// </summary>
-        /// <param name="med">The med.</param>
+        /// <param name="mediator">The med.</param>
         /// <param name="name">The name.</param>
-        public User(IChatMediator med, string name)
+        public User(IChatMediator mediator, string name)
         {
-            this.Mediator = med;
+            this.Mediator = mediator;
             this.Name = name;
         }
 
         /// <summary>
         /// Sends the specified MSG.
         /// </summary>
-        /// <param name="msg">The MSG.</param>
-        public abstract void Send(string msg);
+        /// <param name="message">The MSG.</param>
+        public abstract void Send(string message);
 
         /// <summary>
         /// Receives the specified MSG.
         /// </summary>
-        /// <param name="msg">The MSG.</param>
-        public abstract void Receive(string msg);
+        /// <param name="message">The MSG.</param>
+        public abstract void Receive(string message);
     }
 }
