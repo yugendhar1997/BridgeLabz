@@ -7,8 +7,6 @@
 namespace DesignPatterns.Singleton
 {
     using System;
-    using System.Collections.Generic;
-    using System.Text;
 
     /// <summary>
     /// this class provide the thread safe solution in which multiple thread use same object
@@ -28,7 +26,7 @@ namespace DesignPatterns.Singleton
         /// <summary>
         /// create single object with read only keyword
         /// </summary>
-        private static readonly Object ObjectLock = new Object();
+        private static readonly object ObjectLock = new object();
 
         /// <summary>
         /// Gets the get singleton.
