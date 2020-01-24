@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ShoppingCartVisitor.cs" company="Bridgelabz">
+// <copyright file="VisitorPattern.cs" company="Bridgelabz">
 // Copyright © 2019  Company="BridgeLabz"
 // </copyright>
 // <creator name="Yugendhar Pyata"/>
@@ -16,100 +16,127 @@ namespace DesignPatterns.BehavioralDesignPattern
     /// <seealso cref="DesignPattern.BehavioralDesignPatterns.ItemElement" />
     public class Book : ItemElement
     {
+        /// <summary>
+        /// The Price
+        /// </summary>
         private int price;
+
+        /// <summary>
+        /// The Number
+        /// </summary>
         private string isbnNumber;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Book"/> class.
         /// </summary>
         /// <param name="cost">The cost.</param>
-        /// <param name="isbn">The isbn.</param>
-        public Book(int cost, String isbn)
+        /// <param name="isbn">The Book Number.</param>
+        public Book(int cost, string isbn)
         {
             this.price = cost;
             this.isbnNumber = isbn;
         }
+
         /// <summary>
         /// method to Get the price.
         /// </summary>
-        /// <returns></returns>
-        public int getPrice()
+        /// <returns>The Price</returns>
+        public int GetPrice()
         {
-            return price;
+            return this.price;
         }
+
         /// <summary>
         /// method to Get the book number.
         /// </summary>
-        /// <returns></returns>
-        public String getIsbnNumber()
+        /// <returns>Book Number</returns>
+        public string GetIsbnNumber()
         {
-            return isbnNumber;
+            return this.isbnNumber;
         }
+
         /// <summary>
         /// method to Accept the specified visitor.
         /// </summary>
         /// <param name="visitor">The visitor.</param>
-        /// <returns></returns>
+        /// <returns>The Visitor</returns>
         public int Accept(IShoppingCartVisitor visitor)
         {
             return visitor.Visit(this);
         }
     }
+
     /// <summary>
     /// This is the fruit class which implement ItemElement.
     /// </summary>
-    /// <seealso cref="DesignPattern.BehavioralDesignPatterns.ItemElement" />
     public class Fruit : ItemElement
     {
+        /// <summary>
+        /// Price Per Kg
+        /// </summary>
         private int pricePerKg;
-        private int weight;
-        private String name;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Fruit"/> class.
+        /// The Weight
         /// </summary>
-        /// <param name="priceKg">The price kg.</param>
-        /// <param name="wt">The wt.</param>
-        /// <param name="nm">The nm.</param>
-        public Fruit(int priceKg, int wt, String nm)
+        private int weight;
+
+        /// <summary>
+        /// The Name
+        /// </summary>
+        private string name;
+
+        /// <summary>
+        /// Fruit
+        /// </summary>
+        /// <param name="priceKg">The Price</param>
+        /// <param name="weight">The Weight</param>
+        /// <param name="name">The Name</param>
+        public Fruit(int priceKg, int weight, string name)
         {
             this.pricePerKg = priceKg;
-            this.weight = wt;
-            this.name = nm;
+            this.weight = weight;
+            this.name = name;
         }
+
         /// <summary>
         /// method to Get the price per kg.
         /// </summary>
-        /// <returns></returns>
-        public int getPricePerKg()
+        /// <returns>The Price</returns>
+        public int GetPricePerKg()
         {
-            return pricePerKg;
+            return this.pricePerKg;
         }
+
         /// <summary>
         /// method to Get the weight.
         /// </summary>
-        /// <returns></returns>
-        public int getWeight()
+        /// <returns>The Weight</returns>
+        public int GetWeight()
         {
-            return weight;
+            return this.weight;
         }
+
         /// <summary>
         /// method to Get the name.
         /// </summary>
-        /// <returns></returns>
-        public String getName()
+        /// <returns>The Name</returns>
+        public string GetName()
         {
             return this.name;
         }
+
         /// <summary>
         /// Accepts the specified visitor.
         /// </summary>
         /// <param name="visitor">The visitor.</param>
-        /// <returns></returns>
+        /// <returns>The Visitor</returns>
         public int Accept(IShoppingCartVisitor visitor)
         {
             return visitor.Visit(this);
         }
     }
+
     /// <summary>
     /// class for ShoppingCartVisitorImplementation which implement ShoppingCartVisitor.
     /// </summary>
@@ -120,27 +147,32 @@ namespace DesignPatterns.BehavioralDesignPattern
         /// Visits the specified book.
         /// </summary>
         /// <param name="book">The book.</param>
-        /// <returns></returns>
+        /// <returns>The cost</returns>
         public int Visit(Book book)
         {
             int cost = 0;
-            if (book.getPrice() > 50)
+            if (book.GetPrice() > 50)
             {
-                cost = book.getPrice() - 5;
+                cost = book.GetPrice() - 5;
             }
-            else cost = book.getPrice();
-            Console.WriteLine("Book ISBN::" + book.getIsbnNumber() + " cost =" + cost);
+            else
+            {
+                cost = book.GetPrice();
+            }
+
+            Console.WriteLine("Book ISBN::" + book.GetIsbnNumber() + " cost =" + cost);
             return cost;
         }
+
         /// <summary>
         /// Visits the specified fruit.
         /// </summary>
         /// <param name="fruit">The fruit.</param>
-        /// <returns></returns>
+        /// <returns>The cost</returns>
         public int Visit(Fruit fruit)
         {
-            int cost = fruit.getPricePerKg() * fruit.getWeight();
-            Console.WriteLine(fruit.getName() + " cost = " + cost);
+            int cost = fruit.GetPricePerKg() * fruit.GetWeight();
+            Console.WriteLine(fruit.GetName() + " cost = " + cost);
             return cost;
         }
     }
