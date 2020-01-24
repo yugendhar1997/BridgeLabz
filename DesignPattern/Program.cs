@@ -1,46 +1,43 @@
-﻿namespace DesignPattern
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Program.cs" company="Bridgelabz">
+// Copyright © 2019  Company="BridgeLabz"
+// </copyright>
+// <creator name="Yugendhar Pyata"/>
+// --------------------------------------------------------------------------------------------------------------------
+namespace DesignPatterns
 {
+    using System;
+    using DesignPattern.Singleton;
     using DesignPatterns.BehavioralDesignPattern;
     using DesignPatterns.CreationalPattern;
-    using DesignPatterns.Singleton;
     using DesignPatterns.StructuralDesignPattern;
-    using System;
-    using System.Collections.Generic;
-    using static DesignPatterns.BehavioralDesignPattern.ChatMediatorImp;
-    using static DesignPatterns.BehavioralDesignPattern.MyTopic;
 
     /// <summary>
     /// This is main class of Program.
     /// </summary>
-    class Program
+    public class Program
     {
         /// <summary>
         /// Defines the entry point of the application.
         /// </summary>
         /// <param name="args">The arguments.</param>
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            string repeat;
             try
             {
-                bool flag;
-                int choice;
                 do
                 {
-                    do
-                    {
-                        Console.WriteLine("");
-                        Console.Write("Enter Your Choice: ");
-                        flag = int.TryParse(Console.ReadLine(), out choice);
-                        if (!flag)
-                        {
-                            Console.WriteLine("Enter input integer");
-                        }
-                    } while (!flag);
-                    flag = false;
+                    Console.WriteLine("\nEnter Your Choice:");
+                    Console.WriteLine("Press 1 : Singleton Operations");
+                    Console.WriteLine("Press 2 : Factory Method Design Pattern");
+                    Console.WriteLine("Press 3 : Prototype Pattern");
+                    Console.WriteLine("Press 4 : ");
+                    int choice = Convert.ToInt32(Console.ReadLine());
                     switch (choice)
                     {
                         case 1:
-                            UtilitySingleton.SingletonType();
+                            SingletonOperations.SingletonType();
                             break;
                         case 2:
                             FactoryClient.ClientRequirement();
@@ -63,15 +60,15 @@
                         case 8:
                             Utility.Shopping();
                             break;
-
-                            Console.ReadKey();
-
                     }
-                } while (!flag);
+                    Console.WriteLine("\nDo You want To Continue the Press 'Yes' Or 'No' ");
+                    repeat = Console.ReadLine().ToLower();
+                }
+                while (repeat == "yes");
             }
-            catch (Exception e)
+            catch (Exception exception)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine(exception.Message);
             }
         }
     }

@@ -39,5 +39,14 @@ namespace DesignPatterns.Singleton
             /// </summary>
             public static readonly BillPughSingleton BillPughObject = new BillPughSingleton();
         }
+
+        /// <summary>
+        /// Messages the specified message.
+        /// </summary>
+        /// <param name="message">The message.</param>
+        public void Message(string message)
+        {
+            Console.WriteLine(message);
+        }
     }
 }
