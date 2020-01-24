@@ -19,7 +19,7 @@ namespace DesignPatterns.StructuralDesignPattern
         /// this method take list of product of company
         /// </summary>
         /// <returns>it return list of product</returns>
-        public List<string> getList()
+        public List<string> GetList()
         {
             //// create list to stored multiple product
             List<string> productList = new List<string>();
@@ -46,18 +46,19 @@ namespace DesignPatterns.StructuralDesignPattern
     }
 
     /// <summary>
-    /// this is adapter class used for communication with classes
+    /// Vender Adapter Implements Target Interface
     /// </summary>
+    /// <seealso cref="DesignPatterns.StructuralDesignPattern.ITarget" />
     public class VenderAdapter : ITarget
     {
         /// <summary>
         /// this method take list of product of company
         /// </summary>
         /// <returns>list of product</returns>
-        public List<string> getProducts()
+        public List<string> GetProducts()
         {
             CompanyAdaptee adaptee = new CompanyAdaptee();
-            return adaptee.getList();
+            return adaptee.GetList();
         }
     }
 }
