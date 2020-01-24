@@ -13,7 +13,7 @@ namespace DesignPatterns.BehavioralDesignPattern
     /// this is the chat mediator implementation class.
     /// </summary>
     /// <seealso cref="DesignPattern.BehavioralDesignPatterns.ChatMediator" />
-    public class ChatMediatorImp : IChatMediator
+    public class ChatMediaImp : IChatMediator
     {
         /// <summary>
         /// The users
@@ -21,9 +21,9 @@ namespace DesignPatterns.BehavioralDesignPattern
         private List<User> users;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ChatMediatorImp"/> class.
+        /// Initializes a new instance of the <see cref="ChatMediaImp"/> class.
         /// </summary>
-        public ChatMediatorImp()
+        public ChatMediaImp()
         {
             this.users = new List<User>();
         }
@@ -72,20 +72,20 @@ namespace DesignPatterns.BehavioralDesignPattern
         /// <summary>
         /// method to Send the specified MSG.
         /// </summary>
-        /// <param name="msg">The MSG.</param>
-        public override void Send(string msg)
+        /// <param name="message">The MSG.</param>
+        public override void Send(string message)
         {
-            Console.WriteLine(this.Name + ": Sending Message=" + msg);
-            Mediator.SendMessage(msg, this);
+            Console.WriteLine(this.Name + ": Sending Message=" + message);
+            Mediator.SendMessage(message, this);
         }
 
         /// <summary>
         /// method to Receive the specified MSG.
         /// </summary>
-        /// <param name="msg">The MSG.</param>
-        public override void Receive(string msg)
+        /// <param name="message">The MSG.</param>
+        public override void Receive(string message)
         {
-            Console.WriteLine(this.Name + ": Received Message:" + msg);
+            Console.WriteLine(this.Name + ": Received Message:" + message);
         }
     }
 }
