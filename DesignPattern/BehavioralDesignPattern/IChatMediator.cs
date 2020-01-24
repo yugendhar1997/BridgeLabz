@@ -6,10 +6,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 namespace DesignPatterns.BehavioralDesignPattern
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
-
     /// <summary>
     /// This is an interface of chatMediator.
     /// </summary>
