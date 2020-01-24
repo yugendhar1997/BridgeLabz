@@ -11,13 +11,6 @@ namespace DesignPatterns.CreationalPattern
     using System.Text;
 
     /// <summary>
-    /// this is prototype class
-    /// </summary>
-    public class Prototype
-    {
-    }
-
-    /// <summary>
     /// this is employee interface
     /// </summary>
     public interface IEmployee
@@ -33,6 +26,11 @@ namespace DesignPatterns.CreationalPattern
         /// </summary>
         void GetDetails();
     }
+
+    /// <summary>
+    /// this is prototype class
+    /// </summary>
+    public class Prototype { }
 
     /// <summary>
     /// This Class Implemented by Employee
