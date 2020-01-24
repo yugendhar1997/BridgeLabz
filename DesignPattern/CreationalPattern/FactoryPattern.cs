@@ -24,8 +24,9 @@ namespace DesignPatterns.CreationalPattern
     }
 
     /// <summary>
-    /// it is con create factory inheritance from factory
+    /// Factory implements Factory Pattern 
     /// </summary>
+    /// <seealso cref="DesignPatterns.CreationalPattern.FactoryPattern" />
     public class ConcreateFactory : FactoryPattern
     {
         /// <summary>
@@ -59,11 +60,8 @@ namespace DesignPatterns.CreationalPattern
     public interface IComputer
     {
         /// <summary>
-        /// this is abstract method declaration
+        /// Gets the configuration.
         /// </summary>
-        /// <param name="ram">take RAM</param>
-        /// <param name="harddisk">take HardDisk</param>
-        /// <param name="processor">take Processor</param>
         abstract void GetConfiguration();
     }
 
@@ -75,29 +73,25 @@ namespace DesignPatterns.CreationalPattern
         /// <summary>
         /// it hold Ram Of computer
         /// </summary>
-        public string ram = "4gb";
-
+        public string Ram = "4gb";
 
         /// <summary>
         /// it hold hardDisk Of computer
         /// </summary>
-        public string hardDisk = "1Tb";
+        public string HardDisk = "1Tb";
 
         /// <summary>
         /// it hold processor Of computer
         /// </summary>
-        public string processor = "I3";
+        public string Processor = "I3";
 
         /// <summary>
         /// this is abstract method declaration
         /// </summary>
-        /// <param name="ram">take ram</param>
-        /// <param name="harddisk">take hardDisk</param>
-        /// <param name="processor">take processor</param>
         public void GetConfiguration()
         {
             //// print all configuration of PC
-            Console.WriteLine("PC Congiguration \nRam : {0}\tHardDisk : {1}\tProcessor : {2}", ram, hardDisk, processor);
+            Console.WriteLine("PC Congiguration \nRam : " + this.Ram + "\nHardDisk :" + this.HardDisk + "\nProcessor :" + this.Processor);
         }
     }
 
@@ -106,21 +100,28 @@ namespace DesignPatterns.CreationalPattern
     /// </summary>
     public class Laptop : IComputer
     {
-        public string ram = "8Gb";
-        public string hardDisk = "1Tb";
-        public string processor = "I5";
+        /// <summary>
+        /// The ram
+        /// </summary>
+        public string Ram = "8Gb";
+
+        /// <summary>
+        /// The hard disk
+        /// </summary>
+        public string HardDisk = "1Tb";
+
+        /// <summary>
+        /// The processor
+        /// </summary>
+        public string Processor = "I5";
 
         /// <summary>
         /// this is abstract method declaration
         /// </summary>
-        /// <param name="ram">take RAM</param>
-        /// <param name="harddisk">take HardDisk</param>
-        /// <param name="processor">take Processor</param>
         public void GetConfiguration()
         {
-
             //// print all configuration of Laptop
-            Console.WriteLine("Laptop Congiguration \nRam : {0}\tHardDisk : {1}\tProcessor : {2}", ram, hardDisk, processor);
+            Console.WriteLine("Laptop Congiguration \nRam : " + this.Ram + "\nHardDisk :" + this.HardDisk + "\nProcessor :" + this.Processor);
         }
     }
 
@@ -132,28 +133,25 @@ namespace DesignPatterns.CreationalPattern
         /// <summary>
         /// it hold processor value of Server
         /// </summary>
-        public string processor = "Intel@ Xeon";
+        public string Processor = "Intel@ Xeon";
 
         /// <summary>
         /// it hold memory of processor
         /// </summary>
-        public string memory = "120Tb";
+        public string Memory = "120Tb";
 
         /// <summary>
         /// It hold NIC card of Server
         /// </summary>
-        public string nic = "Dual";
+        public string Nic = "Dual";
 
         /// <summary>
-        /// this method get the configuration of server
+        /// this is abstract method declaration
         /// </summary>
-        /// <param name="processor">take processor value</param>
-        /// <param name="memory">take memory</param>
-        /// <param name="nic">take NIC</param>
         public void GetConfiguration()
         {
             //// print server  configuration
-            Console.WriteLine("Server Congiguration \nProcessor : {0}\tMemory : {1}\tNic : {2}", processor, memory, nic);
+            Console.WriteLine("Server Congiguration \nProcessor : " + this.Processor + "\nMemory : " + this.Memory + "\nNic :" + this.Nic);
         }
     }
 }
