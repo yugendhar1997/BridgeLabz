@@ -16,7 +16,7 @@ namespace DesignPatterns.CreationalPattern
     public class Cloning
     {
         /// <summary>
-        /// Clonings the operation.
+        /// Cloning the operation.
         /// </summary>
         public static void CloningOperation()
         {
