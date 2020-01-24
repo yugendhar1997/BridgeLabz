@@ -14,13 +14,13 @@ namespace DesignPatterns.StructuralDesignPattern
     /// This is the class for AddressBookImplementation which implement AddressBookDetail interface.
     /// </summary>
     /// <seealso cref="DesignPattern.StructuralDesignPattern.AddressBookDetails" />
-    public class AddressBookImp : AddressBookDetails
+    public class AddressBookImp : IAddressBookDetails
     {
         /// <summary>
         /// Address instance.
         /// </summary>
-        /// <returns></returns>
-        public string address()
+        /// <returns>The Address</returns>
+        public string Address()
         {
             Console.WriteLine("Enter Address");
             string address = Console.ReadLine();
@@ -30,8 +30,8 @@ namespace DesignPatterns.StructuralDesignPattern
         /// <summary>
         /// City instance.
         /// </summary>
-        /// <returns></returns>
-        public string city()
+        /// <returns>The City</returns>
+        public string City()
         {
             Console.WriteLine("Enter City");
             string city = Console.ReadLine();
@@ -41,8 +41,8 @@ namespace DesignPatterns.StructuralDesignPattern
         /// <summary>
         /// method for Name instance.
         /// </summary>
-        /// <returns></returns>
-        public string name()
+        /// <returns>The Name</returns>
+        public string Name()
         {
             Console.WriteLine("Enter Last Name");
             string name = Console.ReadLine();
@@ -52,8 +52,8 @@ namespace DesignPatterns.StructuralDesignPattern
         /// <summary>
         /// Phone no instance.
         /// </summary>
-        /// <returns></returns>
-        public int phoneNo()
+        /// <returns>Phone Number</returns>
+        public int PhoneNo()
         {
             Console.WriteLine("Enter phone Number");
             int phoneNo = Convert.ToInt32(Console.ReadLine());
@@ -63,8 +63,8 @@ namespace DesignPatterns.StructuralDesignPattern
         /// <summary>
         /// State instance.
         /// </summary>
-        /// <returns></returns>
-        public string state()
+        /// <returns>The State</returns>
+        public string State()
         {
             Console.WriteLine("Enter state");
             string state = Console.ReadLine();
@@ -72,10 +72,10 @@ namespace DesignPatterns.StructuralDesignPattern
         }
 
         /// <summary>
-        /// Zipcode instance.
+        /// ZipCode instance.
         /// </summary>
-        /// <returns></returns>
-        public int zipCode()
+        /// <returns>The ZipCode</returns>
+        public int ZipCode()
         {
             Console.WriteLine("Enter Zip Code");
             int zipCode = Convert.ToInt32(Console.ReadLine());
