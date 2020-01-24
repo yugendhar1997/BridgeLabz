@@ -3,14 +3,16 @@
 // Copyright © 2019  Company="BridgeLabz"
 // </copyright>
 // <creator name="Yugendhar Pyata"/>
-// --------------------------------------------------------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace DesignPatterns.StructuralDesignPattern
 {
-    interface IBankAccount
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// Bank Account Interface
+    /// </summary>
+    public interface IBankAccount
     {
         /// <summary>
         /// this is abstract method
@@ -25,8 +27,11 @@ namespace DesignPatterns.StructuralDesignPattern
     public class Customer : IBankAccount
     {
         /// <summary>
-        /// this variable hold the bank balance
+        /// Gets or sets the available balance.
         /// </summary>
+        /// <value>
+        /// The available balance.
+        /// </value>
         public static double AvailableBalance { get; set; }
 
         /// <summary>
