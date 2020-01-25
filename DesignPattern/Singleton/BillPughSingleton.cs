@@ -7,8 +7,6 @@
 namespace DesignPatterns.Singleton
 {
     using System;
-    using System.Collections.Generic;
-    using System.Text;
 
     /// <summary>
     /// Singleton of Bill Pugh Implementation
