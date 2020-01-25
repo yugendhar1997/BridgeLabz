@@ -4,11 +4,9 @@
 // </copyright>
 // <creator name="Yugendhar Pyata"/>
 // --------------------------------------------------------------------------------------------------------------------
-namespace DesignPattern.Singleton
+namespace DesignPatterns.Singleton
 {
     using System;
-    using System.Collections.Generic;
-    using System.Text;
 
     /// <summary>
     /// Reflection Company
@@ -16,33 +14,44 @@ namespace DesignPattern.Singleton
     public class ReflectionCompany
     {
         /// <summary>
-        /// this variable hold name of company
+        /// Gets or sets the name of the company.
         /// </summary>
+        /// <value>
+        /// The name of the company.
+        /// </value>
         public string CompanyName { get; set; }
 
         /// <summary>
-        /// this variable hold establish year of company
+        /// Gets or sets the company establish year.
         /// </summary>
+        /// <value>
+        /// The company establish year.
+        /// </value>
         public int CompanyEstablishYear { get; set; }
 
         /// <summary>
-        /// this variable hold number of employee of company
+        /// Gets or sets the number of employee.
         /// </summary>
+        /// <value>
+        /// The number of employee.
+        /// </value>
         public int NumberOfEmployee { get; set; }
 
         /// <summary>
-        /// this variable hold turn over of company
+        /// Gets or sets the turn over.
         /// </summary>
+        /// <value>
+        /// The turn over.
+        /// </value>
         public double TurnOver { get; set; }
 
         /// <summary>
-        /// this method print the details of company on console
+        /// Company the details.
         /// </summary>
-        public void ComapanyDetails()
+        public void CompanyDetails()
         {
             //// this line print details
-            Console.WriteLine("Company Name : {0}\tCompany Establish Year : {1}\tTotal Employee : {2}\tYearly TurnOver : {3}", this.CompanyName,
-               this.CompanyEstablishYear, this.NumberOfEmployee, this.TurnOver);
+            Console.WriteLine("Company Name : " + this.CompanyName + "\nCompany Establish Year : " + this.CompanyEstablishYear + "\nEmployee : " + this.NumberOfEmployee + "\nYearly TurnOver : " + this.TurnOver);
         }
     }
 }
