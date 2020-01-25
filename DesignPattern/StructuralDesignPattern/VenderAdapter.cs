@@ -8,7 +8,6 @@ namespace DesignPatterns.StructuralDesignPattern
 {
     using System;
     using System.Collections.Generic;
-    using System.Text;
 
     /// <summary>
     /// This is the class for Company Adapter.
@@ -32,7 +31,7 @@ namespace DesignPatterns.StructuralDesignPattern
             Console.WriteLine("Enter Your Comapny Product List ");
 
             //// take list of product 
-            for (int i = 0; i < noOfProducts; i++)
+            for (int index = 0; index < noOfProducts; index++)
             {
                 string product = Console.ReadLine();
 
