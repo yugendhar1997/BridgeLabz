@@ -7,13 +7,11 @@
 namespace DesignPatterns.StructuralDesignPattern
 {
     using System;
-    using System.Collections.Generic;
-    using System.Text;
 
     /// <summary>
     /// This is the class for AddressBookImplementation which implement AddressBookDetail interface.
     /// </summary>
-    /// <seealso cref="DesignPattern.StructuralDesignPattern.AddressBookDetails" />
+    /// <seealso cref="DesignPatterns.StructuralDesignPattern.IAddressBookDetails" />
     public class AddressBookImp : IAddressBookDetails
     {
         /// <summary>
