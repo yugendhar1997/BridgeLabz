@@ -8,7 +8,6 @@ namespace DesignPatterns.StructuralDesignPattern
 {
     using System;
     using System.Collections.Generic;
-    using System.Text;
 
     /// <summary>
     /// this is target interface it has get product abstract method
