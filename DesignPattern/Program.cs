@@ -7,9 +7,9 @@
 namespace DesignPatterns
 {
     using System;
-    using DesignPattern.Singleton;
     using DesignPatterns.BehavioralDesignPattern;
     using DesignPatterns.CreationalPattern;
+    using DesignPatterns.Singleton;
     using DesignPatterns.StructuralDesignPattern;
 
     /// <summary>
@@ -31,8 +31,12 @@ namespace DesignPatterns
                     Console.WriteLine("\nEnter Your Choice:");
                     Console.WriteLine("Press 1 : Singleton Operations");
                     Console.WriteLine("Press 2 : Factory Method Design Pattern");
-                    Console.WriteLine("Press 3 : Prototype Pattern");
-                    Console.WriteLine("Press 4 : ");
+                    Console.WriteLine("Press 3 : Cloning Operation Using Prototype Design Pattern");
+                    Console.WriteLine("Press 4 : Vendor Adapter ");
+                    Console.WriteLine("Press 5 : ATM Money Withdraw Proxy Design Pattern");
+                    Console.WriteLine("Press 6 : Observer Design Pattern");
+                    Console.WriteLine("Press 7 : Chat Mediator Design Pattern ");
+                    Console.WriteLine("Press 8 : Shopping ");
                     int choice = Convert.ToInt32(Console.ReadLine());
                     switch (choice)
                     {
@@ -61,6 +65,7 @@ namespace DesignPatterns
                             Utility.Shopping();
                             break;
                     }
+
                     Console.WriteLine("\nDo You want To Continue the Press 'Yes' Or 'No' ");
                     repeat = Console.ReadLine().ToLower();
                 }
