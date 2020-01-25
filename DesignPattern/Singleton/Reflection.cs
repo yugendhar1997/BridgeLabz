@@ -4,7 +4,7 @@
 // </copyright>
 // <creator name="Yugendhar Pyata"/>
 // --------------------------------------------------------------------------------------------------------------------
-namespace DesignPattern.Singleton
+namespace DesignPatterns.Singleton
 {
     using System;
     using System.Reflection;
