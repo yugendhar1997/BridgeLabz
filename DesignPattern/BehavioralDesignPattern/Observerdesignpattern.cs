@@ -46,21 +46,21 @@ namespace DesignPatterns.BehavioralDesignPattern
         /// <summary>
         /// method to Register the specified object.
         /// </summary>
-        /// <param name="obj">The object.</param>
-        public void Register(IObserver obj)
+        /// <param name="objects">The object.</param>
+        public void Register(IObserver objects)
         {
-            if (!observers.Contains(obj)) this.observers.Add(obj);
+            if (!observers.Contains(objects)) this.observers.Add(objects);
         }
 
         /// <summary>
         /// method to Unregister specified object.
         /// </summary>
-        /// <param name="obj">The object.</param>
-        public void Unregister(IObserver obj)
+        /// <param name="objects">The object.</param>
+        public void Unregister(IObserver objects)
         {
             lock (this.mutex)
             {
-                this.observers.Remove(obj);
+                this.observers.Remove(objects);
             }
         }
 
@@ -82,18 +82,18 @@ namespace DesignPatterns.BehavioralDesignPattern
                 this.changed = false;
             }
 
-            foreach (IObserver obj in observersLocal)
+            foreach (IObserver objects in observersLocal)
             {
-                obj.Update();
+                objects.Update();
             }
         }
 
         /// <summary>
         /// method to Get the update.
         /// </summary>
-        /// <param name="obj">The object.</param>
+        /// <param name="objects">The object.</param>
         /// <returns>The Message</returns>
-        public object GetUpdate(IObserver obj)
+        public object GetUpdate(IObserver objects)
         {
             return this.message;
         }
