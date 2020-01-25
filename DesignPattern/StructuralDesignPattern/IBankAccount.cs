@@ -6,8 +6,6 @@
 namespace DesignPatterns.StructuralDesignPattern
 {
     using System;
-    using System.Collections.Generic;
-    using System.Text;
 
     /// <summary>
     /// Bank Account Interface
@@ -59,8 +57,9 @@ namespace DesignPatterns.StructuralDesignPattern
     }
 
     /// <summary>
-    /// this is proxy class implemented from Bank Account
+    /// ATM Proxy class Implements Bank Account Interface
     /// </summary>
+    /// <seealso cref="DesignPatterns.StructuralDesignPattern.IBankAccount" />
     public class AtmProxy : IBankAccount
     {
         /// <summary>
