@@ -7,8 +7,6 @@
 namespace DesignPatterns.CreationalPattern
 {
     using System;
-    using System.Collections.Generic;
-    using System.Text;
 
     /// <summary>
     /// this is client Factory class which has client requirement method that provide the choice to user 
@@ -35,9 +33,9 @@ namespace DesignPatterns.CreationalPattern
 
                 computer.GetConfiguration();
             }
-            catch (NullReferenceException e)
+            catch (NullReferenceException exception)
             {
-                Console.WriteLine(e);
+                Console.WriteLine(exception);
             }
         }
     }
