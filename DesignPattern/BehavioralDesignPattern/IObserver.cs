@@ -23,8 +23,8 @@ namespace DesignPatterns.BehavioralDesignPattern
         /// <summary>
         /// Sets the subject.
         /// </summary>
-        /// <param name="sub">The sub.</param>
-        public void SetSubject(ISubject sub);
+        /// <param name="subject">The sub.</param>
+        public void SetSubject(ISubject subject);
     }
 
     /// <summary>
@@ -35,14 +35,14 @@ namespace DesignPatterns.BehavioralDesignPattern
         /// <summary>
         /// Registers the specified object.
         /// </summary>
-        /// <param name="obj">The object.</param>
-        public void Register(IObserver obj);
+        /// <param name="objects">The object.</param>
+        public void Register(IObserver objects);
 
         /// <summary>
         /// Unregisters the specified object.
         /// </summary>
-        /// <param name="obj">The object.</param>
-        public void Unregister(IObserver obj);
+        /// <param name="objects">The object.</param>
+        public void Unregister(IObserver objects);
 
         /// <summary>
         /// Notifies the observers.
@@ -52,9 +52,9 @@ namespace DesignPatterns.BehavioralDesignPattern
         /// <summary>
         /// Gets the update.
         /// </summary>
-        /// <param name="obj">The object.</param>
+        /// <param name="objects">The object.</param>
         /// <returns>The object</returns>
-        public object GetUpdate(IObserver obj);
+        public object GetUpdate(IObserver objects);
 
         /// <summary>
         /// Gets the update.
