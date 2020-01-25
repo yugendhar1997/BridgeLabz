@@ -4,11 +4,9 @@
 // </copyright>
 // <creator name="Yugendhar Pyata"/>
 // --------------------------------------------------------------------------------------------------------------------
-namespace DesignPattern.Singleton
+namespace DesignPatterns.Singleton
 {
     using System;
-    using System.Collections.Generic;
-    using System.Text;
 
     /// <summary>
     /// this is lazy class which create one object
