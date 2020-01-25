@@ -7,8 +7,6 @@
 namespace DesignPatterns.CreationalPattern
 {
     using System;
-    using System.Collections.Generic;
-    using System.Text;
 
     /// <summary>
     /// This is the class for cloning.
