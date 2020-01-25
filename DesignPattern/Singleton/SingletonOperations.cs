@@ -4,10 +4,9 @@
 // </copyright>
 // <creator name="Yugendhar Pyata"/>
 // --------------------------------------------------------------------------------------------------------------------
-namespace DesignPattern.Singleton
+namespace DesignPatterns.Singleton
 {
     using System;
-    using DesignPatterns.Singleton;
 
     /// <summary>
     /// this is singleton utility this class provide choice to user
@@ -74,9 +73,9 @@ namespace DesignPattern.Singleton
             singletonObject.Message("This Is Eager Singletone");
         }
 
-       /// <summary>
-       /// Lazy Singleton
-       /// </summary>
+        /// <summary>
+        /// Lazy Singleton
+        /// </summary>
         public static void LazySingleton()
         {
             SingletonLazy singletonLazy = SingletonLazy.GetSingleton;
