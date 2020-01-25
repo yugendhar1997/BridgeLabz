@@ -30,7 +30,7 @@ namespace DesignPatterns.BehavioralDesignPattern
             mediator.AddUser(user2);
             mediator.AddUser(user3);
             mediator.AddUser(user4);
-            user1.Send("Hi All");
+            user1.Send("Hi Everyone");
         }
 
         /// <summary>
