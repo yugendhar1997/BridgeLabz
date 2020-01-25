@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ChatMediatorImp.cs" company="Bridgelabz">
+// <copyright file="ChatMediaImp.cs" company="Bridgelabz">
 // Copyright © 2019  Company="BridgeLabz"
 // </copyright>
 // <creator name="Yugendhar Pyata"/>
@@ -12,7 +12,7 @@ namespace DesignPatterns.BehavioralDesignPattern
     /// <summary>
     /// this is the chat mediator implementation class.
     /// </summary>
-    /// <seealso cref="DesignPattern.BehavioralDesignPatterns.ChatMediator" />
+    /// <seealso cref="DesignPatterns.BehavioralDesignPattern.IChatMediator" />
     public class ChatMediaImp : IChatMediator
     {
         /// <summary>
@@ -40,22 +40,22 @@ namespace DesignPatterns.BehavioralDesignPattern
         /// <summary>
         /// method for Send the message.
         /// </summary>
-        /// <param name="msg">The MSG.</param>
+        /// <param name="message">The MSG.</param>
         /// <param name="user">The user.</param>
-        public void SendMessage(string msg, User user)
+        public void SendMessage(string message, User user)
         {
-            foreach (User u in this.users)
+            foreach (User users in this.users)
             {
-                if (u != user)
+                if (users != user)
                 {
-                    u.Receive(msg);
+                    users.Receive(message);
                 }
             }
         }
     }
 
     /// <summary>
-    /// User Implementation Class
+    /// User Implementation Implements User
     /// </summary>
     /// <seealso cref="DesignPatterns.BehavioralDesignPattern.User" />
     public class UserImp : User
@@ -63,11 +63,9 @@ namespace DesignPatterns.BehavioralDesignPattern
         /// <summary>
         /// Initializes a new instance of the <see cref="UserImp"/> class.
         /// </summary>
-        /// <param name="med">The med.</param>
+        /// <param name="mediator">The med.</param>
         /// <param name="name">The name.</param>
-        public UserImp(IChatMediator med, string name) : base(med, name)
-        {
-        }
+        public UserImp(IChatMediator mediator, string name) : base(mediator, name) { }
 
         /// <summary>
         /// method to Send the specified MSG.
