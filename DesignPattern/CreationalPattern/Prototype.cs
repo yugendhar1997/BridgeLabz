@@ -69,10 +69,6 @@ namespace DesignPatterns.CreationalPattern
         public IEmployee Clone()
         {
             return (IEmployee)MemberwiseClone();
-
-            ////  Developer developer = (Developer)this.MemberwiseClone();
-            ////  developer.employeeName = (IEmployee)this.employeeName.Clone();
-            ////  return developer;
         }
 
         /// <summary>
@@ -80,7 +76,7 @@ namespace DesignPatterns.CreationalPattern
         /// </summary>
         public void GetDetails()
         {
-            Console.WriteLine("Developer :\nId : {0}, Name : {1}, Salary :{2}", this.EmployeeId, this.EmployeeName, this.EmployeeSalary);
+            Console.WriteLine("Developer :\nId : " + this.EmployeeId + "\nName : " + this.EmployeeName + "Salary : " + this.EmployeeSalary);
         }
     }
 
@@ -131,7 +127,7 @@ namespace DesignPatterns.CreationalPattern
         /// </summary>
         public void GetDetails()
         {
-            Console.WriteLine("Tester : \nId : {0} Name {1} :{1} Salary :{2}", this.EmployeeId, this.EmployeeName, this.EmployeeSalary);
+            Console.WriteLine("Tester : \nId : " + this.EmployeeId + "\nName : " + this.EmployeeName + "\nSalary : " + this.EmployeeSalary);
         }
     }
 }
