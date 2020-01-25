@@ -14,9 +14,9 @@ namespace DesignPatterns.BehavioralDesignPattern
         /// <summary>
         /// Sends the message.
         /// </summary>
-        /// <param name="msg">The MSG.</param>
+        /// <param name="message">The MSG.</param>
         /// <param name="user">The user.</param>
-        public void SendMessage(string msg, User user);
+        public void SendMessage(string message, User user);
 
         /// <summary>
         /// Adds the user.
