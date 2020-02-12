@@ -1,18 +1,13 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file=Employee.cs" company="Bridgelabz">
-//   Copyright © 2019 Company="BridgeLabz"
+// <copyright file="Employee.cs" company="Bridgelabz">
+// Copyright © 2019  Company="BridgeLabz"
 // </copyright>
 // <creator name="Yugendhar Pyata"/>
 // --------------------------------------------------------------------------------------------------------------------
-
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace EmployeeManagement.Model
 {
+    using System.ComponentModel.DataAnnotations;
+
     /// <summary>
     /// Model class for the employee.
     /// </summary>
@@ -25,7 +20,7 @@ namespace EmployeeManagement.Model
         /// The empid.
         /// </value>
         [Key]
-        [Required(ErrorMessage = "Empid is required.")]
+        [Required(ErrorMessage = "Emp id is required.")]
         public int Empid { get; set; }
 
         /// <summary>
