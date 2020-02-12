@@ -1,18 +1,14 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file=IEmployeeManager.cs" company="Bridgelabz">
-//   Copyright © 2019 Company="BridgeLabz"
+// <copyright file="IEmployeeManager.cs" company="Bridgelabz">
+// Copyright © 2019  Company="BridgeLabz"
 // </copyright>
-// <creator name="Yugendhar"/>
+// <creator name="Yugendhar Pyata"/>
 // --------------------------------------------------------------------------------------------------------------------
-
-using EmployeeManagement.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace EmployeeManagement.Manager
 {
+    using System.Collections.Generic;
+    using EmployeeManagement.Model;
+
     /// <summary>
     /// Interface for manager class
     /// </summary>
@@ -22,28 +18,27 @@ namespace EmployeeManagement.Manager
         /// Adds the specified emp.
         /// </summary>
         /// <param name="emp">The emp.</param>
-        /// <returns></returns>
+        /// <returns>Employee Object</returns>
         string Add(Employee emp);
 
         /// <summary>
         /// Retrieves all employees.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Employee Details</returns>
         List<Employee> Retrieve();
 
         /// <summary>
         /// Deletes the employee of the specified id.
         /// </summary>
         /// <param name="id">The identifier.</param>
-        /// <returns></returns>
+        /// <returns>Deleted Employee</returns>
         string Delete(int id);
 
         /// <summary>
         /// Updates the specified employee.
         /// </summary>
         /// <param name="emp">The emp.</param>
-        /// <returns></returns>
+        /// <returns>Updated Employee</returns>
         string Update(Employee emp);
-        
     }
 }
