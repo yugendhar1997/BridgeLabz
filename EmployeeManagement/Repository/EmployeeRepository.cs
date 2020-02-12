@@ -1,92 +1,84 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file=EmployeeRepository.cs" company="Bridgelabz">
-//   Copyright © 2019 Company="BridgeLabz"
+// <copyright file="EmployeeRepository.cs" company="Bridgelabz">
+// Copyright © 2019  Company="BridgeLabz"
 // </copyright>
-// <creator name="Yugendhar"/>
+// <creator name="Yugendhar Pyata"/>
 // --------------------------------------------------------------------------------------------------------------------
-
-using EmployeeManagement.Model;
-using Microsoft.IdentityModel.Protocols;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace EmployeeManagement.Repository
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Data;
+    using System.Data.SqlClient;
+    using System.Linq;
+    using EmployeeManagement.Model;
+
     /// <summary>
     /// Repository class which contains method for CRUD operations
     /// </summary>
     /// <seealso cref="EmployeeManagement.Repository.IEmployeeRepository" />
     public class EmployeeRepository : IEmployeeRepository
     {
-        private SqlConnection con;
         /// <summary>
-        /// To Handle connection related activities
+        /// The SQL connection
         /// </summary>
-        private void connection()
-        {
-            string constr = "Server=(Localdb)\\MSSQLLocaldb;Database=EmployeeManagement;Integrated Security=True;";
-            con = new SqlConnection(constr);
+        private SqlConnection sqlConnection;
 
+        /// <summary>
+        /// To Handle Connection related activities
+        /// </summary>
+        private void Connection()
+        {
+            string connectionString = "Server=(Localdb)\\MSSQLLocaldb;Database=EmployeeManagement;Integrated Security=True;";
+            this.sqlConnection = new SqlConnection(connectionString);
         }
 
         /// <summary>
         /// To Add Employee details to the database.
         /// </summary>
-        /// <param name="obj">The object.</param>
-        /// <returns></returns>
-        public bool AddEmployee(Employee obj)
+        /// <param name="employee">The object.</param>
+        /// <returns>Added Employees</returns>
+        public bool AddEmployee(Employee employee)
         {
+            this.Connection();
+            SqlCommand sqlCommand = new SqlCommand("AddNewEmpDetails", sqlConnection);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("@Empid", employee.Empid);
+            sqlCommand.Parameters.AddWithValue("@Name", employee.Name);
+            sqlCommand.Parameters.AddWithValue("@City", employee.City);
+            sqlCommand.Parameters.AddWithValue("@Address", employee.Address);
 
-            connection();
-            SqlCommand com = new SqlCommand("AddNewEmpDetails", con);
-            com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.AddWithValue("@Empid", obj.Empid);
-            com.Parameters.AddWithValue("@Name", obj.Name);
-            com.Parameters.AddWithValue("@City", obj.City);
-            com.Parameters.AddWithValue("@Address", obj.Address);
-
-            con.Open();
-            int i = com.ExecuteNonQuery();
-            con.Close();
-            if (i >= 1)
+            this.sqlConnection.Open();
+            int affectedRecords = sqlCommand.ExecuteNonQuery();
+            this.sqlConnection.Close();
+            if (affectedRecords >= 1)
             {
-
                 return true;
-
             }
             else
             {
-
                 return false;
             }
-
-
         }
 
         /// <summary>
-        /// To view employee details with generic list.
+        /// Gets all employees from database.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Employee List</returns>
         public List<Employee> GetAllEmployees()
         {
-            connection();
+            this.Connection();
             List<Employee> EmpList = new List<Employee>();
-            SqlCommand com = new SqlCommand("GetEmployees", con);
-            com.CommandType = CommandType.StoredProcedure;
-            SqlDataAdapter da = new SqlDataAdapter(com);
-            DataTable dt = new DataTable();
-            con.Open();
-            da.Fill(dt);
-            con.Close();
+            SqlCommand sqlCommand = new SqlCommand("GetEmployees", sqlConnection);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable dataTable = new DataTable();
+            this.sqlConnection.Open();
+            dataAdapter.Fill(dataTable);
+            this.sqlConnection.Close();
 
             ////Bind EmpModel generic list using LINQ 
-            EmpList = (from DataRow dr in dt.Rows
-
+            EmpList = (from DataRow dr in dataTable.Rows
                        select new Employee()
                        {
                            Empid = Convert.ToInt32(dr["Empid"]),
@@ -94,78 +86,59 @@ namespace EmployeeManagement.Repository
                            City = Convert.ToString(dr["City"]),
                            Address = Convert.ToString(dr["Address"])
                        }).ToList();
-
-
             return EmpList;
-
-
         }
 
         /// <summary>
-        /// To Update Employee details.
+        /// Updates the employee.
         /// </summary>
-        /// <param name="obj">The object.</param>
-        /// <returns></returns>
-        public bool UpdateEmployee(Employee obj)
+        /// <param name="employee">The employee.</param>
+        /// <returns>Updated Employees</returns>
+        public bool UpdateEmployee(Employee employee)
         {
-
-            connection();
-            SqlCommand com = new SqlCommand("UpdateEmpDetails", con);
-
-            com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.AddWithValue("@Empid", obj.Empid);
-            com.Parameters.AddWithValue("@Name", obj.Name);
-            com.Parameters.AddWithValue("@City", obj.City);
-            com.Parameters.AddWithValue("@Address", obj.Address);
-            con.Open();
-            int i = com.ExecuteNonQuery();
-            con.Close();
-            if (i >= 1)
+            this.Connection();
+            SqlCommand sqlCommand = new SqlCommand("UpdateEmpDetails", sqlConnection);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("@Empid", employee.Empid);
+            sqlCommand.Parameters.AddWithValue("@Name", employee.Name);
+            sqlCommand.Parameters.AddWithValue("@City", employee.City);
+            sqlCommand.Parameters.AddWithValue("@Address", employee.Address);
+            this.sqlConnection.Open();
+            int affectedRecords = sqlCommand.ExecuteNonQuery();
+            this.sqlConnection.Close();
+            if (affectedRecords >= 1)
             {
-
                 return true;
-
             }
             else
             {
-
                 return false;
             }
-
-
         }
 
         /// <summary>
-        /// To delete Employee details.
+        /// Deletes the employee.
         /// </summary>
         /// <param name="Id">The identifier.</param>
-        /// <returns></returns>
+        /// <returns>Delete Employee</returns>
         public bool DeleteEmployee(int Id)
         {
+            this.Connection();
+            SqlCommand sqlCommand = new SqlCommand("DeleteEmpById", sqlConnection);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("@Empid", Id);
 
-            connection();
-            SqlCommand com = new SqlCommand("DeleteEmpById", con);
-
-            com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.AddWithValue("@Empid", Id);
-
-            con.Open();
-            int i = com.ExecuteNonQuery();
-            con.Close();
-            if (i >= 1)
+            this.sqlConnection.Open();
+            int affectedRecords = sqlCommand.ExecuteNonQuery();
+            this.sqlConnection.Close();
+            if (affectedRecords >= 1)
             {
-
                 return true;
-
             }
             else
             {
-
                 return false;
             }
-
-
-
         }
     }
 }
