@@ -1,25 +1,24 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file=EmployeeManager.cs" company="Bridgelabz">
-//   Copyright © 2019 Company="BridgeLabz"
+// <copyright file="EmployeeManager.cs" company="Bridgelabz">
+// Copyright © 2019  Company="BridgeLabz"
 // </copyright>
-// <creator name="Yugendhar"/>
+// <creator name="Yugendhar Pyata"/>
 // --------------------------------------------------------------------------------------------------------------------
-
-using EmployeeManagement.Model;
-using EmployeeManagement.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace EmployeeManagement.Manager
 {
+    using System.Collections.Generic;
+    using EmployeeManagement.Model;
+    using EmployeeManagement.Repository;
+
     /// <summary>
     /// Manager class for performing CRUD operations
     /// </summary>
     /// <seealso cref="EmployeeManagement.Manager.IEmployeeManager" />
     public class EmployeeManager : IEmployeeManager
     {
+        /// <summary>
+        /// The emp repository
+        /// </summary>
         private IEmployeeRepository empRepository;
 
         /// <summary>
@@ -35,7 +34,7 @@ namespace EmployeeManagement.Manager
         /// Adds the specified emp.
         /// </summary>
         /// <param name="emp">The emp.</param>
-        /// <returns></returns>
+        /// <returns>Added Employee</returns>
         public string Add(Employee emp)
         {
             if (empRepository.AddEmployee (emp))
@@ -49,7 +48,7 @@ namespace EmployeeManagement.Manager
         /// Deletes employee of the specified id.
         /// </summary>
         /// <param name="id">The identifier.</param>
-        /// <returns></returns>
+        /// <returns>Deleted Employee</returns>
         public string Delete(int id)
         {
             if (empRepository.DeleteEmployee(id))
@@ -59,11 +58,10 @@ namespace EmployeeManagement.Manager
             return " Employee Not Deleted";
         }
 
-
         /// <summary>
         /// Retrieves all employees.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>All Employee</returns>
         public List<Employee> Retrieve()
         {
             return empRepository.GetAllEmployees();
@@ -73,7 +71,7 @@ namespace EmployeeManagement.Manager
         /// Updates the specified emp.
         /// </summary>
         /// <param name="emp">The emp.</param>
-        /// <returns></returns>
+        /// <returns>Updated Employee</returns>
         public string Update(Employee emp)
         {
             if (empRepository.UpdateEmployee(emp))
