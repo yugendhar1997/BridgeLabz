@@ -6,10 +6,10 @@
 </head>
 <body>
     <form method="post">
-
         EmployeeId:
         <input type="text" name="empid" id="empid" />
         <br /><br />
+
         EmployeeName:
         <input type="text" name="username" id="username" />
         <br /><br />
@@ -24,9 +24,6 @@
 
         <input type="button" value="SignUp" class="btnSubmit" id="btnSubmit" />
     </form>
-
-    
-
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">
     </script>
@@ -49,7 +46,6 @@
                     success: function (response) {
                         $("#loaderDiv").show();
                         alert("EMPLOYEE UPDATED SUCCESSFULLY");
-
                     }
                 });
             });
