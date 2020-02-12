@@ -10,16 +10,9 @@
         EmployeeId:
         <input type="text" name="empid" id="empid" />
         <br /><br />
-        
 
-        <input type="button"
-               
-               
-               value="Delete" class="btnSubmit" id="btnSubmit" />
+        <input type="button" value="Delete" class="btnSubmit" id="btnSubmit" />
     </form>
-
-    
-
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">
     </script>
@@ -40,10 +33,7 @@
                    success: function (response) {
                        $("#loaderDiv").show();
                        alert("EMPLOYEE DELETED SUCCESSFULLY");
-
                    }
-
-
                });
            });
        });
