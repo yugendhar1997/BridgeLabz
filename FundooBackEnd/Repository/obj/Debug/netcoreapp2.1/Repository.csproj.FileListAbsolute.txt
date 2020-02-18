@@ -1,0 +1,13 @@
+C:\Users\Bridgelabz\source\repos\Repository\bin\Debug\netcoreapp2.1\Repository.deps.json
+C:\Users\Bridgelabz\source\repos\Repository\bin\Debug\netcoreapp2.1\Repository.runtimeconfig.json
+C:\Users\Bridgelabz\source\repos\Repository\bin\Debug\netcoreapp2.1\Repository.runtimeconfig.dev.json
+C:\Users\Bridgelabz\source\repos\Repository\bin\Debug\netcoreapp2.1\Repository.dll
+C:\Users\Bridgelabz\source\repos\Repository\bin\Debug\netcoreapp2.1\Repository.pdb
+C:\Users\Bridgelabz\source\repos\Repository\bin\Debug\netcoreapp2.1\Model.dll
+C:\Users\Bridgelabz\source\repos\Repository\bin\Debug\netcoreapp2.1\Model.pdb
+C:\Users\Bridgelabz\source\repos\Repository\obj\Debug\netcoreapp2.1\Repository.csprojAssemblyReference.cache
+C:\Users\Bridgelabz\source\repos\Repository\obj\Debug\netcoreapp2.1\Repository.AssemblyInfoInputs.cache
+C:\Users\Bridgelabz\source\repos\Repository\obj\Debug\netcoreapp2.1\Repository.AssemblyInfo.cs
+C:\Users\Bridgelabz\source\repos\Repository\obj\Debug\netcoreapp2.1\Repository.csproj.CopyComplete
+C:\Users\Bridgelabz\source\repos\Repository\obj\Debug\netcoreapp2.1\Repository.dll
+C:\Users\Bridgelabz\source\repos\Repository\obj\Debug\netcoreapp2.1\Repository.pdb
