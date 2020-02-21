@@ -1,87 +1,134 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
+using Manager.Interface;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
 using Model;
+using Repository.Connections;
+using Repository.Interface;
+using Repository.Repository;
 
 namespace Fundoo.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly UserManager<UserModels> userManager;
 
-        private readonly AppSetting appSettings;
+        private Connection connection = new Connection();
+        private IAccountRepository accountRepository;
+        private IAccount account;
 
-        [HttpPost]
-        [Route("/login")]
-        public async Task<IActionResult> Login(LoginModel model)
+        public UserController(IAccountRepository accountRepository, IAccount account)
         {
-            try
-            {
-                var user = await this.userManager.FindByEmailAsync(model.Email);
-                if (user != null && await this.userManager.CheckPasswordAsync(user, model.Password))
-                {
-                    var tokenDescriptor = new SecurityTokenDescriptor
-                    {
-                        Subject = new ClaimsIdentity(new Claim[]
-                    {
-
-                          new Claim("Email",user.Email)
-                    }),
-                        Expires = DateTime.UtcNow.AddDays(1),
-                        SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(this.appSettings.Secret)), SecurityAlgorithms.HmacSha256Signature)
-                    };
-                    var tokenHandler = new JwtSecurityTokenHandler();
-                    var securityToken = tokenHandler.CreateToken(tokenDescriptor);
-                    var token = tokenHandler.WriteToken(securityToken);
-                    return this.Ok(new { token, user });
-
-                }
-                else
-                {
-                    return this.BadRequest();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+            this.accountRepository = accountRepository;
+            this.account = account;
         }
 
-        public async Task<IActionResult> Register(RegistrationModel model)
+        [HttpPost]
+        [Route("login")]
+        public async Task<IActionResult> Login([FromBody] LoginModel loginModel)
         {
             try
             {
-                if (!ModelState.IsValid)
-                {
-                    return this.BadRequest(this.ModelState);
-                }
+                var result = await this.account.LoginAsync(loginModel);
 
-                var user = new UserModels()
-                {
-                    FirstName = model.firstName,
-                    LastName = model.lastName,
-                    Email = model.emailId,
-                    Password = model.password,
-                };
-
-                var result = await this.userManager.CreateAsync(user, model.password);
-
-                return this.Ok(result);
+                return Ok(result);
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+                return BadRequest(e.Message);
             }
         }
+
+        [HttpPost]
+        [Route("register")]
+        public async Task<IActionResult> Registration([FromBody] UserModels models)
+        {
+            try
+            {
+                // connection.Add(models);
+                var result = await this.account.RegistrationAsync(models);
+                return this.Ok(new { result });
+            }
+            catch (Exception e)
+            {
+                return this.BadRequest(e.Message);
+            }
+        }
+
+        [HttpPost]
+        [Route("forget")]
+        public async Task<IActionResult> ForgotPassword([FromBody] ForgetPasswordModel model)
+        {
+            try
+            {
+                var result = await this.account.ForgetPassword(model);
+
+                return Ok(result);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpPost]
+        [Route("reset")]
+        public async Task<ActionResult> ResetPassword([FromBody]ResetPasswordModel resetPasswordModel)
+        {
+            try
+            {
+                var result = await this.account.ResetPassword(resetPasswordModel);
+
+                return Ok(result);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpPost]
+        [Route("fblogin")]
+        public async Task<IActionResult> FaceBookLogin([FromBody] string Email)
+        {
+            try
+            {
+                var result = await this.account.FaceBookLoginAsync(Email);
+
+                return Ok(result);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        //[HttpPost]
+        //[Route("fblogin")]
+        //public async Task<IActionResult> FaceBookLogin([FromBody]string Email)
+        //{
+        //    try
+        //    {
+        //        var result = await this.account.FaceBookLoginAsync(Email);
+        //        AdminModel model = new AdminModel();
+        //        model.Email = Email;
+        //        DateTime time = DateTime.Now;
+        //        model.LoginTime = time.ToString();
+        //        admin.Add(model);
+        //        if (result == "invalid user")
+        //        {
+        //            return this.BadRequest();
+        //        }
+        //        else
+        //        {
+        //            return this.Ok(new { result });
+        //        }
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return this.BadRequest(e.Message);
+        //    }
+        //}
+
 
     }
 }
