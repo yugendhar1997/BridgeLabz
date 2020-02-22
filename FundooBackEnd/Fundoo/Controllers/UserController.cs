@@ -1,27 +1,50 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="UserController.cs" company="Bridgelabz">
+// Copyright © 2020  Company="BridgeLabz"
+// </copyright>
+// <creator name="Yugendhar Pyata"/>
+// --------------------------------------------------------------------------------------------------------------------
+using System;
 using System.Threading.Tasks;
 using Manager.Interface;
 using Microsoft.AspNetCore.Mvc;
 using Model;
-using Repository.Connections;
 using Repository.Interface;
-using Repository.Repository;
 
 namespace Fundoo.Controllers
 {
+    /// <summary>
+    /// User Controller
+    /// </summary>
+    /// <seealso cref="Microsoft.AspNetCore.Mvc.ControllerBase" />
     public class UserController : ControllerBase
     {
-
-        private Connection connection = new Connection();
+        /// <summary>
+        /// The account repository
+        /// </summary>
         private IAccountRepository accountRepository;
+
+        /// <summary>
+        /// The account
+        /// </summary>
         private IAccount account;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserController"/> class.
+        /// </summary>
+        /// <param name="accountRepository">The account repository.</param>
+        /// <param name="account">The account.</param>
         public UserController(IAccountRepository accountRepository, IAccount account)
         {
             this.accountRepository = accountRepository;
             this.account = account;
         }
 
+        /// <summary>
+        /// Logins the specified login model.
+        /// </summary>
+        /// <param name="loginModel">The login model.</param>
+        /// <returns></returns>
         [HttpPost]
         [Route("login")]
         public async Task<IActionResult> Login([FromBody] LoginModel loginModel)
@@ -32,28 +55,37 @@ namespace Fundoo.Controllers
 
                 return Ok(result);
             }
-            catch (Exception e)
+            catch (Exception exception)
             {
-                return BadRequest(e.Message);
+                return BadRequest(exception.Message);
             }
         }
 
+        /// <summary>
+        /// Registrations the specified models.
+        /// </summary>
+        /// <param name="models">The models.</param>
+        /// <returns></returns>
         [HttpPost]
         [Route("register")]
         public async Task<IActionResult> Registration([FromBody] UserModels models)
         {
             try
             {
-                // connection.Add(models);
                 var result = await this.account.RegistrationAsync(models);
                 return this.Ok(new { result });
             }
-            catch (Exception e)
+            catch (Exception exception)
             {
-                return this.BadRequest(e.Message);
+                return this.BadRequest(exception.Message);
             }
         }
 
+        /// <summary>
+        /// Forgot password.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns></returns>
         [HttpPost]
         [Route("forget")]
         public async Task<IActionResult> ForgotPassword([FromBody] ForgetPasswordModel model)
@@ -64,12 +96,17 @@ namespace Fundoo.Controllers
 
                 return Ok(result);
             }
-            catch (Exception e)
+            catch (Exception exception)
             {
-                return BadRequest(e.Message);
+                return BadRequest(exception.Message);
             }
         }
 
+        /// <summary>
+        /// Resets the password.
+        /// </summary>
+        /// <param name="resetPasswordModel">The reset password model.</param>
+        /// <returns></returns>
         [HttpPost]
         [Route("reset")]
         public async Task<ActionResult> ResetPassword([FromBody]ResetPasswordModel resetPasswordModel)
@@ -80,55 +117,31 @@ namespace Fundoo.Controllers
 
                 return Ok(result);
             }
-            catch (Exception e)
+            catch (Exception exception)
             {
-                return BadRequest(e.Message);
+                return BadRequest(exception.Message);
             }
         }
 
+        /// <summary>
+        /// Facebook login.
+        /// </summary>
+        /// <param name="loginModel">The login model.</param>
+        /// <returns></returns>
         [HttpPost]
         [Route("fblogin")]
-        public async Task<IActionResult> FaceBookLogin([FromBody] string Email)
+        public async Task<IActionResult> FaceBookLogin([FromBody] LoginModel loginModel)
         {
             try
             {
-                var result = await this.account.FaceBookLoginAsync(Email);
+                var result = await this.account.FaceBookLoginAsync(loginModel);
 
                 return Ok(result);
             }
-            catch (Exception e)
+            catch (Exception exception)
             {
-                return BadRequest(e.Message);
+                return BadRequest(exception.Message);
             }
         }
-
-        //[HttpPost]
-        //[Route("fblogin")]
-        //public async Task<IActionResult> FaceBookLogin([FromBody]string Email)
-        //{
-        //    try
-        //    {
-        //        var result = await this.account.FaceBookLoginAsync(Email);
-        //        AdminModel model = new AdminModel();
-        //        model.Email = Email;
-        //        DateTime time = DateTime.Now;
-        //        model.LoginTime = time.ToString();
-        //        admin.Add(model);
-        //        if (result == "invalid user")
-        //        {
-        //            return this.BadRequest();
-        //        }
-        //        else
-        //        {
-        //            return this.Ok(new { result });
-        //        }
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        return this.BadRequest(e.Message);
-        //    }
-        //}
-
-
     }
 }
