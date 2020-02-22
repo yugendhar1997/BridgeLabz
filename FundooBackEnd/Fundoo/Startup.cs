@@ -1,4 +1,12 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Startup.cs" company="Bridgelabz">
+// Copyright © 2020  Company="BridgeLabz"
+// </copyright>
+// <creator name="Yugendhar Pyata"/>
+// --------------------------------------------------------------------------------------------------------------------
+using Manager.Interface;
+using Manager.Manager;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -7,6 +15,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Model;
 using Repository;
+using Repository.Interface;
+using Repository.Repository;
 
 namespace Fundoo
 {
@@ -32,6 +42,8 @@ namespace Fundoo
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddTransient<IAccountRepository, AccountRepository>();
+            services.AddTransient<IAccount, AccountManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
