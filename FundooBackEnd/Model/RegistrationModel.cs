@@ -1,11 +1,17 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="RegistrationModel.cs" company="Bridgelabz">
+// Copyright © 2020  Company="BridgeLabz"
+// </copyright>
+// <creator name="Yugendhar Pyata"/>
+// --------------------------------------------------------------------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace Model
 {
-    class RegistrationModel
+    public class RegistrationModel
     {
         /// <summary>
         /// Gets or sets the first name.
@@ -23,6 +29,7 @@ namespace Model
         /// The last name.
         /// </value>
         [Required]
+
         public string LastName { get; set; }
 
         /// <summary>
