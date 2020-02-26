@@ -48,5 +48,19 @@ namespace Manager.Interface
         /// <param name="loginModel">The login model.</param>
         /// <returns></returns>
         Task<string> FaceBookLoginAsync(LoginModel loginModel);
+
+        /// <summary>
+        /// Google Login asynchronous
+        /// </summary>
+        /// <param name="loginModel"></param>
+        /// <returns></returns>
+        Task<string> GoogleLoginAsync(LoginModel loginModel);
+
+        /// <summary>
+        /// Logout asynchronous
+        /// </summary>
+        /// <param name="loginModel"></param>
+        /// <returns></returns>
+        string LogoutAsync(LoginModel loginModel);
     }
 }
