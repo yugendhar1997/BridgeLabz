@@ -10,6 +10,9 @@ using System.Text;
 
 namespace Model
 {
+    /// <summary>
+    /// App Settings
+    /// </summary>
     public class AppSetting
     {
         /// <summary>
