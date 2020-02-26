@@ -43,10 +43,24 @@ namespace Repository.Interface
         Task<string> ForgetPasswordAsync(ForgetPasswordModel model);
 
         /// <summary>
-        /// Faces the book login asynchronous.
+        /// Facebook login asynchronous.
         /// </summary>
         /// <param name="loginModel">The login model.</param>
         /// <returns></returns>
         Task<string> FaceBookLoginAsync(LoginModel loginModel);
+
+        /// <summary>
+        /// Google login asynchronous.
+        /// </summary>
+        /// <param name="loginModel">The login model.</param>
+        /// <returns></returns>
+        Task<string> GoogleLoginAsync(LoginModel loginModel);
+
+        /// <summary>
+        /// Logouts the specified login model.
+        /// </summary>
+        /// <param name="loginModel">The login model.</param>
+        /// <returns></returns>
+        string Logout(LoginModel loginModel);
     }
 }
