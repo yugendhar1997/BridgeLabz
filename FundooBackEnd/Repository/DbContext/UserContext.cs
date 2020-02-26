@@ -6,6 +6,8 @@
 // --------------------------------------------------------------------------------------------------------------------
 using Microsoft.EntityFrameworkCore;
 using Model;
+using Model.LabelModel;
+using Model.NotesModel;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -32,10 +34,10 @@ namespace Repository
         /// <value>
         /// The user data.
         /// </value>
-        public DbSet<UserModels> UserData
-        {
-            get;
-            set;
-        }
+        public DbSet<UserModels> UserData { get; set; }
+
+        public DbSet<NotesModel> Notes { get; set; }
+
+        public DbSet<LabelModel> Labels { get; set; }
     }
 }
