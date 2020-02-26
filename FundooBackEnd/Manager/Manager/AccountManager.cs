@@ -92,6 +92,28 @@ namespace Manager.Manager
             var result = this.context.FaceBookLoginAsync(loginModel);
             return result;
         }
+
+        /// <summary>
+        /// Google Login asynchronous
+        /// </summary>
+        /// <param name="loginModel"></param>
+        /// <returns></returns>
+        public async Task<string> GoogleLoginAsync(LoginModel loginModel)
+        {
+            var result = await this.context.GoogleLoginAsync(loginModel);
+            return ("USER SUCCESSFULLY LOGIN. = " + result);
+
+        }
+
+        /// <summary>
+        /// Logout
+        /// </summary>
+        /// <param name="loginModel"></param>
+        /// <returns></returns>
+        public string LogoutAsync(LoginModel loginModel)
+        {
+            var result = this.context.Logout(loginModel);
+            return result;
+        }
     }
 }
-
