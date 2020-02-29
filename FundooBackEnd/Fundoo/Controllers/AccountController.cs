@@ -22,11 +22,6 @@ namespace Fundoo.Controllers
     public class AccountController : ControllerBase
     {
         /// <summary>
-        /// The account repository
-        /// </summary>
-        private readonly IAccountRepository accountRepository;
-
-        /// <summary>
         /// The account
         /// </summary>
         private readonly IAccount account;
