@@ -1,4 +1,10 @@
-﻿using Manager.Interface;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="LabelManager.cs" company="Bridgelabz">
+// Copyright © 2020  Company="BridgeLabz"
+// </copyright>
+// <creator name="Yugendhar Pyata"/>
+// --------------------------------------------------------------------------------------------------------------------
+using Manager.Interface;
 using Model.LabelModel;
 using Repository.Interface;
 using System;
