@@ -1,4 +1,10 @@
-﻿using Manager.Interface;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="LabelController.cs" company="Bridgelabz">
+// Copyright © 2020  Company="BridgeLabz"
+// </copyright>
+// <creator name="Yugendhar Pyata"/>
+// --------------------------------------------------------------------------------------------------------------------
+using Manager.Interface;
 using Microsoft.AspNetCore.Mvc;
 using Model.LabelModel;
 using System;
