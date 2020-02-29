@@ -1,4 +1,10 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="NotesModel.cs" company="Bridgelabz">
+// Copyright © 2020  Company="BridgeLabz"
+// </copyright>
+// <creator name="Yugendhar Pyata"/>
+// --------------------------------------------------------------------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -60,5 +66,53 @@ namespace Model.NotesModel
         /// The modified date.
         /// </value>
         public DateTime? ModifiedDate { get; set; }
+
+        /// <summary>
+        /// Gets or sets the images.
+        /// </summary>
+        /// <value>
+        /// The images.
+        /// </value>
+        public string Images { get; set; }
+
+        /// <summary>
+        /// Gets or sets the remainder.
+        /// </summary>
+        /// <value>
+        /// The remainder.
+        /// </value>
+        public string Reminder { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is archieve.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is archieve; otherwise, <c>false</c>.
+        /// </value>
+        public bool IsArchive { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is trash.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is trash; otherwise, <c>false</c>.
+        /// </value>
+        public bool IsTrash { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is pin.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is pin; otherwise, <c>false</c>.
+        /// </value>
+        public bool IsPin { get; set; }
+
+        /// <summary>
+        /// Gets or sets the color.
+        /// </summary>
+        /// <value>
+        /// The color.
+        /// </value>
+        public string Color { get; set; }
     }
 }
