@@ -51,14 +51,15 @@ namespace Fundoo
             }));
 
             //// Register the Swagger generator, defining 1 or more Swagger documents
-            services.AddSwaggerGen(c =>
+            services.AddSwaggerGen(config =>
             {
-                c.SwaggerDoc("v1", new Info 
+                config.SwaggerDoc("v1", new Info 
                 {
                     Title = "FUNDOO NOTES API",
                     Version = "v1" ,
                     Description="ASP.NET core WEB API"
                 });
+                config.OperationFilter<FileUploadOperation>();
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
