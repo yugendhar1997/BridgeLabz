@@ -1,10 +1,16 @@
-﻿using Model.LabelModel;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ILabel.cs" company="Bridgelabz">
+// Copyright © 2020  Company="BridgeLabz"
+// </copyright>
+// <creator name="Yugendhar Pyata"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace Manager.Interface
 {
+    using Model.LabelModel;
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
     /// <summary>
     /// Label Manager interface
     /// </summary>
