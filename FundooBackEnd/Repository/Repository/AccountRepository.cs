@@ -314,11 +314,11 @@ namespace Repository.Repository
         {
             try
             {
-                var cachekey = loginModel.Email;
+                var cacheKey = loginModel.Email;
                 ConnectionMultiplexer connectionMulitplexer = ConnectionMultiplexer.Connect("127.0.0.1:6379");
                 StackExchange.Redis.IDatabase database = connectionMulitplexer.GetDatabase();
 
-                database.KeyDelete(cachekey);
+                database.KeyDelete(cacheKey);
                 return "LOGOUT SUCCESSFULLY";
             }
             catch (Exception e)
