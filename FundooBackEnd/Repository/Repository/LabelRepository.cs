@@ -1,4 +1,10 @@
-﻿using Model.LabelModel;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="LabelRepository.cs" company="Bridgelabz">
+// Copyright © 2020  Company="BridgeLabz"
+// </copyright>
+// <creator name="Yugendhar Pyata"/>
+// --------------------------------------------------------------------------------------------------------------------
+using Model.LabelModel;
 using Repository.Interface;
 using System;
 using System.Collections.Generic;
